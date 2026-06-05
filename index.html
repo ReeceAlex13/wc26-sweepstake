@@ -18,9 +18,9 @@
     --muted: #6b6b80;
     --red: #e63946;
   }
-
+ 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
   body {
     background: var(--dark);
     color: var(--text);
@@ -28,7 +28,7 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
-
+ 
   /* ── NAV ── */
   nav {
     position: sticky; top: 0; z-index: 100;
@@ -47,7 +47,7 @@
   .nav-btn:hover { color: var(--text); background: rgba(255,255,255,0.05); }
   .nav-btn.active { color: var(--gold); background: rgba(255,215,0,0.08); }
   .nav-logo { font-family: 'Bebas Neue'; font-size: 22px; color: var(--gold); margin-right: 16px; letter-spacing: .05em; }
-
+ 
   /* ── B&Q LOGO ── */
   .bq-logo { display: inline-flex; align-items: center; gap: 0; margin-right: 4px; flex-shrink: 0; }
   .bq-badge {
@@ -59,7 +59,7 @@
   }
   .bq-badge .bq-amp { color: #fff; }
   .bq-divider { width: 1px; height: 28px; background: var(--border); margin: 0 12px; }
-
+ 
   /* ── WC LOGO IN HERO ── */
   .wc-logo-wrap { display: flex; justify-content: center; margin-bottom: 16px; }
   .hero-brand {
@@ -68,12 +68,12 @@
     display: flex; align-items: center; justify-content: center; gap: 8px;
   }
   .hero-brand .hb-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--green); display: inline-block; }
-
+ 
   /* ── PAGES ── */
   .page { display: none; padding: 32px 24px; max-width: 1100px; margin: 0 auto; }
   .page.active { display: block; animation: fadeIn .3s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-
+ 
   /* ── HERO BANNER ── */
   .hero {
     text-align: center; padding: 60px 20px 40px;
@@ -82,7 +82,7 @@
   .hero h1 { font-family: 'Bebas Neue'; font-size: clamp(48px, 8vw, 96px); letter-spacing: .04em; line-height: 1; }
   .hero h1 span { color: var(--gold); }
   .hero p { color: var(--muted); font-size: 17px; margin-top: 8px; }
-
+ 
   /* ── SECTION TITLES ── */
   .section-title {
     font-family: 'Bebas Neue'; font-size: 28px; letter-spacing: .06em;
@@ -90,10 +90,10 @@
     display: flex; align-items: center; gap: 10px;
   }
   .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
+ 
   /* ── DRAW MACHINE ── */
   #drawPage { animation: fadeIn .3s ease; }
-
+ 
   .participants-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -112,7 +112,7 @@
   .participant-slot .p-name { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
   .participant-slot .p-teams { font-size: 15px; color: var(--muted); min-height: 32px; line-height: 1.5; }
   .participant-slot .p-flags { font-size: 20px; margin-top: 4px; }
-
+ 
   .draw-controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 28px; }
   .btn-primary {
     background: var(--green); color: #fff;
@@ -136,14 +136,14 @@
     cursor: pointer; transition: all .2s;
   }
   .btn-outline:hover { border-color: var(--text); color: var(--text); }
-
+ 
   /* drum roll animation */
   @keyframes drumRoll {
     0%,100% { transform: scale(1); }
     50% { transform: scale(1.04); }
   }
   .drumming { animation: drumRoll .15s ease-in-out infinite; }
-
+ 
   .reveal-overlay {
     position: fixed; inset: 0; z-index: 200;
     background: rgba(0,0,0,0.85);
@@ -168,7 +168,7 @@
   .reveal-next { margin-top: 20px; }
   @keyframes pop { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.2); } 100% { transform: scale(1); opacity: 1; } }
   .team-pop { display: inline-block; animation: pop .5s cubic-bezier(.34,1.56,.64,1) both; }
-
+ 
   /* Confetti */
   .confetti-piece {
     position: fixed; top: -10px;
@@ -181,7 +181,7 @@
     0% { transform: translateY(0) rotate(0deg); opacity: 1; }
     100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
   }
-
+ 
   /* ── SWEEPSTAKE DASHBOARD ── */
   .sweepstake-grid {
     display: grid;
@@ -203,7 +203,7 @@
     font-size: 15px;
   } { border-bottom: none; }
   .sw-flag { font-size: 22px; }
-
+ 
   /* ── WEEKLY FORM ── */
   .game-card {
     background: var(--card);
@@ -220,10 +220,10 @@
   .game-team .flag { font-size: 40px; }
   .game-team .name { font-family: 'Teko'; font-size: 22px; letter-spacing: .04em; margin-top: 4px; }
   .vs { font-family: 'Bebas Neue'; font-size: 28px; color: var(--muted); }
-
+ 
   .form-label { font-size: 14px; font-weight: 600; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; display: block; }
   .form-section { margin-bottom: 20px; }
-
+ 
   .outcome-btns { display: flex; gap: 8px; flex-wrap: wrap; }
   .outcome-btn {
     flex: 1; min-width: 80px;
@@ -237,7 +237,7 @@
   }
   .outcome-btn:hover { border-color: var(--green); color: var(--text); }
   .outcome-btn.selected { border-color: var(--green); background: rgba(0,165,80,0.12); color: var(--green); }
-
+ 
   .score-inputs { display: flex; align-items: center; gap: 10px; }
   .score-inputs input {
     width: 60px; text-align: center;
@@ -248,7 +248,7 @@
   }
   .score-inputs input:focus { border-color: var(--gold); }
   .score-dash { font-family: 'Bebas Neue'; font-size: 24px; color: var(--muted); }
-
+ 
   select {
     width: 100%;
     background: var(--panel); border: 2px solid var(--border);
@@ -258,7 +258,7 @@
     transition: border-color .2s; appearance: none;
   }
   select:focus { border-color: var(--gold); }
-
+ 
   .form-input {
     width: 100%;
     background: var(--panel); border: 2px solid var(--border);
@@ -267,7 +267,7 @@
     padding: 10px 14px; outline: none; transition: border-color .2s;
   }
   .form-input:focus { border-color: var(--gold); }
-
+ 
   .submit-section { text-align: center; margin-top: 32px; }
   .points-guide {
     display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
@@ -279,7 +279,7 @@
     font-size: 14px; color: var(--muted);
   }
   .points-pill span { color: var(--gold); font-weight: 700; }
-
+ 
   /* ── LEADERBOARD ── */
   .leaderboard { max-width: 600px; margin: 0 auto; }
   .lb-row {
@@ -302,7 +302,7 @@
   .lb-pts span { font-family: 'DM Sans'; font-size: 15px; color: var(--muted); font-weight: 400; }
   .lb-breakdown { font-size: 15px; color: var(--muted); display: flex; gap: 8px; flex-wrap: wrap; }
   .lb-breakdown b { color: var(--text); }
-
+ 
   /* ── ADMIN ── */
   .admin-card {
     background: var(--card); border: 1px solid var(--border);
@@ -320,14 +320,14 @@
   .tag-green { background: rgba(0,165,80,0.15); color: var(--green); }
   .tag-gold { background: rgba(255,215,0,0.15); color: var(--gold); }
   .tag-red { background: rgba(230,57,70,0.15); color: var(--red); }
-
+ 
   .notice {
     background: rgba(255,215,0,0.06); border: 1px solid rgba(255,215,0,0.2);
     border-radius: 10px; padding: 14px 18px; font-size: 15px; color: var(--muted);
     margin-bottom: 20px;
   }
   .notice strong { color: var(--gold); }
-
+ 
   /* mobile */
   @media (max-width: 600px) {
     .admin-grid { grid-template-columns: 1fr; }
@@ -336,17 +336,17 @@
     .game-team .name { font-size: 16px; }
     .hero h1 { font-size: 52px; }
   }
-
+ 
   .week-badge {
     display: inline-block; background: rgba(0,165,80,0.15); color: var(--green);
     border: 1px solid rgba(0,165,80,0.3); border-radius: 20px;
     padding: 4px 14px; font-size: 14px; font-weight: 600; letter-spacing: .06em;
     margin-bottom: 16px;
   }
-
+ 
   .empty-state { text-align: center; padding: 60px 20px; color: var(--muted); }
   .empty-state .emoji { font-size: 48px; margin-bottom: 12px; }
-
+ 
   .toast {
     position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
     background: var(--green); color: #fff;
@@ -356,26 +356,27 @@
     z-index: 500; pointer-events: none;
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
-
+ 
   .name-entry { display: flex; gap: 10px; margin-bottom: 20px; align-items: flex-end; }
   .name-entry .form-input { max-width: 300px; }
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <span class="bq-logo">
     <span class="bq-badge">B<span class="bq-amp">&amp;</span>Q</span>
   </span>
   <span class="bq-divider"></span>
   <span class="nav-logo">⚽ WC26</span>
-  <button class="nav-btn active" onclick="showPage('draw')">🎲 Draw</button>
+  <button class="nav-btn" id="navDraw" onclick="showPage('draw')">🎲 Draw</button>
   <button class="nav-btn" onclick="showPage('sweepstake')">🏆 Sweepstake</button>
   <button class="nav-btn" onclick="showPage('predict')">📝 Predict</button>
   <button class="nav-btn" onclick="showPage('leaderboard')">📊 Leaderboard</button>
   <button class="nav-btn" onclick="showPage('admin')">⚙️ Admin</button>
+  <span id="drawLockedBadge" style="display:none;margin-left:auto;background:rgba(0,165,80,0.15);color:var(--green);border:1px solid rgba(0,165,80,0.3);border-radius:20px;padding:4px 14px;font-size:13px;font-weight:600;letter-spacing:.04em;">🔒 Draw Locked</span>
 </nav>
-
+ 
 <!-- ═══════════════════════════════ DRAW PAGE ═══════════════════════════════ -->
 <div class="page active" id="drawPage">
   <div class="hero">
@@ -413,16 +414,16 @@
     </div>
     <h1>WORLD CUP <span>2026</span></h1>
     <p style="font-size:16px;font-weight:600;color:var(--gold);margin-top:6px;letter-spacing:.04em;">B&amp;Q Marketplace Sweepstake</p>
-    <p style="margin-top:6px">22 participants · 2 teams each · 44 teams in the hat</p>
+    <p style="margin-top:6px">25 participants · 1 team each · top 25 teams in the hat</p>
   </div>
-
+ 
   <div style="max-width:900px;margin:0 auto;padding:0 0 40px">
     <div class="section-title">PARTICIPANTS</div>
-
+ 
     <div class="notice">
-      <strong>Before you draw:</strong> Make sure your 22 names are entered below. Then hit <strong>Start Live Draw</strong> to reveal teams one-by-one — perfect for screensharing with the team!
+      <strong>Before you draw:</strong> Make sure your 25 names are entered below. Then hit <strong>Start Live Draw</strong> to reveal teams one-by-one — perfect for screensharing with the team!
     </div>
-
+ 
     <div class="name-entry">
       <div style="flex:1">
         <label class="form-label">Add participant name</label>
@@ -431,9 +432,9 @@
       <button class="btn-primary" onclick="addParticipant()">Add</button>
       <button class="btn-outline" onclick="loadSampleNames()">Load sample names</button>
     </div>
-
+ 
     <div class="participants-grid" id="participantsGrid"></div>
-
+ 
     <div class="draw-controls">
       <button class="btn-gold" id="drawBtn" onclick="startDraw()" disabled>🎲 Start Live Draw</button>
       <button class="btn-outline" onclick="resetDraw()">↺ Reset Draw</button>
@@ -441,31 +442,43 @@
       <label class="btn-outline" style="cursor:pointer" title="Restore a previously exported save file">📂 Import Save<input type="file" accept=".json" onchange="importSave(event)" style="display:none"></label>
       <span id="drawStatus" style="color:var(--muted);font-size:15px"></span>
     </div>
+ 
+    <div style="margin-top:32px">
+      <div class="section-title">🎩 TEAMS IN THE HAT</div>
+      <div id="teamsInHat" style="display:flex;flex-wrap:wrap;gap:10px;"></div>
+    </div>
   </div>
 </div>
-
+ 
 <!-- ═══════════════════════════════ SWEEPSTAKE PAGE ═══════════════════════════════ -->
 <div class="page" id="sweepstakePage">
   <div style="padding: 8px 0 28px">
+    <div id="drawLockedBanner" style="display:none;background:rgba(0,165,80,0.08);border:1px solid rgba(0,165,80,0.25);border-radius:12px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:14px;">
+      <span style="font-size:28px">🔒</span>
+      <div>
+        <div style="font-weight:700;font-size:16px;color:var(--green)">Draw Complete & Locked</div>
+        <div style="font-size:14px;color:var(--muted);margin-top:2px">Teams have been assigned — results are final. Good luck everyone! ⚽</div>
+      </div>
+    </div>
     <div class="section-title">🏆 SWEEPSTAKE DRAW RESULTS</div>
     <div id="sweepstakeGrid" class="sweepstake-grid">
       <div class="empty-state"><div class="emoji">🎲</div><p>Complete the draw first to see results here</p></div>
     </div>
   </div>
 </div>
-
+ 
 <!-- ═══════════════════════════════ PREDICT PAGE ═══════════════════════════════ -->
 <div class="page" id="predictPage">
   <div style="padding: 8px 0 28px">
     <div class="week-badge">⚽ WEEK 1 — PREDICTIONS OPEN</div>
     <div class="section-title">📝 MAKE YOUR PREDICTIONS</div>
-
+ 
     <div class="points-guide">
       <div class="points-pill">Correct outcome → <span>3 pts</span></div>
       <div class="points-pill">Correct scoreline → <span>10 pts</span></div>
       <div class="points-pill">Correct goalscorer → <span>5 pts</span></div>
     </div>
-
+ 
     <div class="name-entry">
       <div>
         <label class="form-label">Your name</label>
@@ -474,15 +487,15 @@
         </select>
       </div>
     </div>
-
+ 
     <div id="gamesContainer"></div>
-
+ 
     <div class="submit-section">
       <button class="btn-gold" onclick="submitPredictions()" style="font-size:16px;padding:14px 40px">Submit Predictions ✓</button>
     </div>
   </div>
 </div>
-
+ 
 <!-- ═══════════════════════════════ LEADERBOARD PAGE ═══════════════════════════════ -->
 <div class="page" id="leaderboardPage">
   <div style="padding: 8px 0 28px">
@@ -493,23 +506,23 @@
     </div>
   </div>
 </div>
-
+ 
 <!-- ═══════════════════════════════ ADMIN PAGE ═══════════════════════════════ -->
 <div class="page" id="adminPage">
   <div style="padding: 8px 0 28px">
     <div class="section-title">⚙️ ADMIN — ENTER RESULTS</div>
-
+ 
     <div class="notice">
       <strong>Admin only.</strong> Enter the actual results for each game here. Points are calculated automatically and the leaderboard updates instantly.
     </div>
-
+ 
     <div id="resultsAdmin"></div>
-
+ 
     <div class="admin-card">
       <h3>📋 Submissions Received</h3>
       <div id="submissionsTable"><p style="color:var(--muted);font-size:15px">No submissions yet.</p></div>
     </div>
-
+ 
     <div class="admin-card">
       <h3>🔄 New Week Setup</h3>
       <p style="font-size:15px;color:var(--muted);margin-bottom:16px">Start a new week — enter the 3 new games below. This preserves all historical points.</p>
@@ -518,7 +531,7 @@
     </div>
   </div>
 </div>
-
+ 
 <!-- ═══════════════════════════════ REVEAL OVERLAY ═══════════════════════════════ -->
 <div class="reveal-overlay" id="revealOverlay">
   <div class="reveal-card">
@@ -531,57 +544,42 @@
     </div>
   </div>
 </div>
-
+ 
 <div class="toast" id="toast"></div>
-
+ 
 <script>
 // ═══════════════════════════════════════════════════════
 // DATA
 // ═══════════════════════════════════════════════════════
-
+ 
 const ALL_TEAMS = [
-  { name: "Brazil",       flag: "🇧🇷" },
-  { name: "France",       flag: "🇫🇷" },
-  { name: "England",      flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-  { name: "Spain",        flag: "🇪🇸" },
-  { name: "Argentina",    flag: "🇦🇷" },
-  { name: "Germany",      flag: "🇩🇪" },
-  { name: "Portugal",     flag: "🇵🇹" },
-  { name: "Netherlands",  flag: "🇳🇱" },
-  { name: "Belgium",      flag: "🇧🇪" },
-  { name: "Croatia",      flag: "🇭🇷" },
-  { name: "Italy",        flag: "🇮🇹" },
-  { name: "Uruguay",      flag: "🇺🇾" },
-  { name: "Mexico",       flag: "🇲🇽" },
-  { name: "USA",          flag: "🇺🇸" },
-  { name: "Colombia",     flag: "🇨🇴" },
-  { name: "Japan",        flag: "🇯🇵" },
-  { name: "Senegal",      flag: "🇸🇳" },
-  { name: "Morocco",      flag: "🇲🇦" },
-  { name: "South Korea",  flag: "🇰🇷" },
-  { name: "Switzerland",  flag: "🇨🇭" },
-  { name: "Denmark",      flag: "🇩🇰" },
-  { name: "Ecuador",      flag: "🇪🇨" },
-  { name: "Serbia",       flag: "🇷🇸" },
-  { name: "Poland",       flag: "🇵🇱" },
-  { name: "Australia",    flag: "🇦🇺" },
-  { name: "Canada",       flag: "🇨🇦" },
-  { name: "Ukraine",      flag: "🇺🇦" },
-  { name: "Turkey",       flag: "🇹🇷" },
-  { name: "Austria",      flag: "🇦🇹" },
-  { name: "Hungary",      flag: "🇭🇺" },
-  { name: "Chile",        flag: "🇨🇱" },
-  { name: "Venezuela",    flag: "🇻🇪" },
-  { name: "Peru",         flag: "🇵🇪" },
-  { name: "Paraguay",     flag: "🇵🇾" },
-  { name: "Bolivia",      flag: "🇧🇴" },
-  { name: "Cameroon",     flag: "🇨🇲" },
-  { name: "Nigeria",      flag: "🇳🇬" },
-  { name: "Ivory Coast",  flag: "🇨🇮" },
-  { name: "Algeria",      flag: "🇩🇿" },
-  { name: "South Africa", flag: "🇿🇦" },
+  { name: "France",           flag: "🇫🇷" },
+  { name: "Spain",            flag: "🇪🇸" },
+  { name: "England",          flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
+  { name: "Argentina",        flag: "🇦🇷" },
+  { name: "Brazil",           flag: "🇧🇷" },
+  { name: "Portugal",         flag: "🇵🇹" },
+  { name: "Germany",          flag: "🇩🇪" },
+  { name: "Netherlands",      flag: "🇳🇱" },
+  { name: "Morocco",          flag: "🇲🇦" },
+  { name: "Colombia",         flag: "🇨🇴" },
+  { name: "Uruguay",          flag: "🇺🇾" },
+  { name: "USA",              flag: "🇺🇸" },
+  { name: "Mexico",           flag: "🇲🇽" },
+  { name: "Japan",            flag: "🇯🇵" },
+  { name: "Croatia",          flag: "🇭🇷" },
+  { name: "Belgium",          flag: "🇧🇪" },
+  { name: "Switzerland",      flag: "🇨🇭" },
+  { name: "Senegal",          flag: "🇸🇳" },
+  { name: "South Korea",      flag: "🇰🇷" },
+  { name: "Ecuador",          flag: "🇪🇨" },
+  { name: "Canada",           flag: "🇨🇦" },
+  { name: "Norway",           flag: "🇳🇴" },
+  { name: "Australia",        flag: "🇦🇺" },
+  { name: "Scotland",         flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿" },
+  { name: "Austria",          flag: "🇦🇹" },
 ];
-
+ 
 // Week 1 games (you can update these in Admin > New Week)
 let STATE = JSON.parse(localStorage.getItem('wc26_state') || 'null') || {
   participants: [],
@@ -644,9 +642,9 @@ let STATE = JSON.parse(localStorage.getItem('wc26_state') || 'null') || {
   predictions: [],   // [ { name, week, g1: { outcome, scoreA, scoreB, scorer }, ... } ]
   weekHistory: {},   // { 1: { points: { Alice: 23, Bob: 15 } } }
 };
-
+ 
 function save() { localStorage.setItem('wc26_state', JSON.stringify(STATE)); }
-
+ 
 // ═══════════════════════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════════════════════
@@ -660,14 +658,14 @@ function showPage(page) {
   if (page === 'leaderboard') renderLeaderboard();
   if (page === 'admin') renderAdmin();
 }
-
+ 
 // ═══════════════════════════════════════════════════════
 // DRAW MACHINE
 // ═══════════════════════════════════════════════════════
 let drawQueue = [];
 let drawIndex = 0;
 let shuffledTeams = [];
-
+ 
 function renderParticipantsGrid() {
   const grid = document.getElementById('participantsGrid');
   grid.innerHTML = STATE.participants.map((p, i) => `
@@ -678,17 +676,17 @@ function renderParticipantsGrid() {
       <button onclick="removeParticipant(${i})" style="position:absolute;top:6px;right:8px;background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px;${p.teams?'display:none':''}">✕</button>
     </div>
   `).join('');
-  document.getElementById('drawBtn').disabled = STATE.participants.length !== 22 || STATE.drawComplete;
-  document.getElementById('drawStatus').textContent = STATE.participants.length < 22
-    ? `${STATE.participants.length}/22 names added`
+  document.getElementById('drawBtn').disabled = STATE.participants.length !== 25 || STATE.drawComplete;
+  document.getElementById('drawStatus').textContent = STATE.participants.length < 25
+    ? `${STATE.participants.length}/25 names added`
     : STATE.drawComplete ? '✅ Draw complete!' : '✅ Ready to draw!';
 }
-
+ 
 function addParticipant() {
   const input = document.getElementById('nameInput');
   const name = input.value.trim();
   if (!name) return;
-  if (STATE.participants.length >= 22) return showToast('Maximum 22 participants');
+  if (STATE.participants.length >= 25) return showToast('Maximum 25 participants');
   if (STATE.participants.find(p => p.name.toLowerCase() === name.toLowerCase())) return showToast('Name already added');
   STATE.participants.push({ name, teams: null });
   save();
@@ -696,22 +694,22 @@ function addParticipant() {
   renderParticipantsGrid();
   updatePredictorSelect();
 }
-
+ 
 function removeParticipant(i) {
   STATE.participants.splice(i, 1);
   save();
   renderParticipantsGrid();
   updatePredictorSelect();
 }
-
+ 
 function loadSampleNames() {
-  const samples = ['Alice','Bob','Charlie','Diana','Ed','Fiona','George','Hannah','Ivan','Julia','Kevin','Laura','Mike','Nina','Oscar','Priya','Quinn','Rachel','Sam','Tara','Uma','Victor'];
+  const samples = ['Reece','Tim','Phil','Ophelie','Joanna','Nathan','Karima','Katie','William','Luke','Holly','Victoria','Aime','Shauna','Raman','Tom','Jono','Luke','Ash','Elliott','Josh K','Olly','Dan','Sam','Lucas'];
   STATE.participants = samples.map(name => ({ name, teams: null }));
   save();
   renderParticipantsGrid();
   updatePredictorSelect();
 }
-
+ 
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -720,64 +718,69 @@ function shuffle(arr) {
   }
   return a;
 }
-
+ 
 function startDraw() {
-  if (STATE.participants.length !== 22) return;
+  if (STATE.participants.length !== 25) return;
   shuffledTeams = shuffle(ALL_TEAMS);
   drawQueue = shuffle([...STATE.participants.map((_,i)=>i)]);
   drawIndex = 0;
-  // assign teams
-  shuffledTeams.slice(0,40);
   nextReveal();
 }
-
+ 
 function nextReveal() {
   if (drawIndex >= drawQueue.length) {
     document.getElementById('revealOverlay').classList.remove('show');
     STATE.drawComplete = true;
     save();
+    applyDrawLockedState();
     renderParticipantsGrid();
     renderSweepstake();
+    // Switch to sweepstake page
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('sweepstakePage').classList.add('active');
+    const sweepBtn = document.querySelector('.nav-btn[onclick*="sweepstake"]');
+    if (sweepBtn) sweepBtn.classList.add('active');
     launchConfetti(80);
-    showToast('🎉 Draw complete! Check the Sweepstake tab');
+    showToast('🎉 Draw complete! Teams are now locked in');
     return;
   }
   const pIdx = drawQueue[drawIndex];
   const p = STATE.participants[pIdx];
-  const team1 = shuffledTeams[drawIndex * 2];
-  const team2 = shuffledTeams[drawIndex * 2 + 1];
-  p.teams = [team1, team2];
+  const team1 = shuffledTeams[drawIndex];
+  p.teams = [team1];
   save();
-
+ 
   // Update slot
   const slot = document.getElementById('slot-' + pIdx);
   if (slot) {
     slot.classList.add('drumming');
     setTimeout(() => slot.classList.remove('drumming'), 400);
     slot.classList.add('assigned');
-    slot.querySelector('.p-flags').textContent = p.teams.map(t=>t.flag).join(' ');
-    slot.querySelector('.p-teams').innerHTML = p.teams.map(t=>t.name).join('<br>');
+    slot.querySelector('.p-flags').textContent = team1.flag;
+    slot.querySelector('.p-teams').innerHTML = team1.name;
     slot.querySelector('button').style.display = 'none';
   }
-
+ 
   document.getElementById('revealName').textContent = p.name;
-  document.getElementById('revealFlags').innerHTML = `<span class="team-pop" style="animation-delay:0.1s">${team1.flag}</span> <span class="team-pop" style="animation-delay:0.35s">${team2.flag}</span>`;
-  document.getElementById('revealTeams').innerHTML = `<span class="team-pop" style="animation-delay:0.1s">${team1.name}</span><br><span class="team-pop" style="animation-delay:0.35s">${team2.name}</span>`;
+  document.getElementById('revealFlags').innerHTML = `<span class="team-pop" style="animation-delay:0.1s">${team1.flag}</span>`;
+  document.getElementById('revealTeams').innerHTML = `<span class="team-pop" style="animation-delay:0.1s">${team1.name}</span>`;
   const btn = document.getElementById('revealNextBtn');
   btn.textContent = drawIndex >= drawQueue.length - 1 ? '🎉 Finish' : 'Next →';
   document.getElementById('revealOverlay').classList.add('show');
   drawIndex++;
 }
-
+ 
 function resetDraw() {
   if (!confirm('Reset the draw? All team assignments will be cleared.')) return;
   STATE.participants.forEach(p => p.teams = null);
   STATE.drawComplete = false;
   save();
+  applyDrawLockedState();
   renderParticipantsGrid();
   renderSweepstake();
 }
-
+ 
 // ═══════════════════════════════════════════════════════
 // SWEEPSTAKE DASHBOARD
 // ═══════════════════════════════════════════════════════
@@ -795,21 +798,22 @@ function renderSweepstake() {
     </div>
   `).join('');
 }
-
+ 
 // ═══════════════════════════════════════════════════════
 // PREDICT FORM
 // ═══════════════════════════════════════════════════════
 function posIcon(p) {
   return { GK: '🧤', DEF: '🛡️', MID: '⚙️', FWD: '⚽' }[p] || '';
 }
-
+ 
 function updatePredictorSelect() {
   const sel = document.getElementById('predictorSelect');
   if (!sel) return;
+  const names = ['Reece','Tim','Phil','Ophelie','Joanna','Nathan','Karima','Katie','William','Luke','Holly','Victoria','Aime','Shauna','Raman','Tom','Jono','Luke','Ash','Elliott','Josh K','Olly','Dan','Sam','Lucas'];
   sel.innerHTML = '<option value="">— Select your name —</option>' +
-    STATE.participants.map(p => `<option value="${p.name}">${p.name}</option>`).join('');
+    names.map(n => `<option value="${n}">${n}</option>`).join('');
 }
-
+ 
 function renderPredictForm() {
   updatePredictorSelect();
   const container = document.getElementById('gamesContainer');
@@ -820,7 +824,7 @@ function renderPredictForm() {
         <div class="vs">VS</div>
         <div class="game-team"><div class="flag">${g.flagB}</div><div class="name">${g.teamB}</div></div>
       </div>
-
+ 
       <div class="form-section">
         <label class="form-label">⚽ Outcome — 3 pts for correct result</label>
         <div class="outcome-btns">
@@ -829,7 +833,7 @@ function renderPredictForm() {
           <button class="outcome-btn" onclick="selectOutcome('${g.id}','B',this)">${g.flagB} ${g.teamB} Win</button>
         </div>
       </div>
-
+ 
       <div class="form-section">
         <label class="form-label">🎯 Exact Scoreline — 10 pts for correct score</label>
         <div class="score-inputs">
@@ -840,7 +844,7 @@ function renderPredictForm() {
           <span style="font-size:15px;color:var(--muted)">${g.flagB} ${g.teamB}</span>
         </div>
       </div>
-
+ 
       <div class="form-section">
         <label class="form-label">🥅 Goalscorer — 5 pts if they score in this game</label>
         <div style="font-size:15px;color:var(--muted);margin-bottom:6px;">⚽ Forward &nbsp;·&nbsp; ⚙️ Midfielder &nbsp;·&nbsp; 🛡️ Defender &nbsp;·&nbsp; 🧤 Goalkeeper</div>
@@ -857,7 +861,7 @@ function renderPredictForm() {
     </div>
   `).join('');
 }
-
+ 
 const selectedOutcomes = {};
 function selectOutcome(gameId, val, btn) {
   selectedOutcomes[gameId] = val;
@@ -865,11 +869,11 @@ function selectOutcome(gameId, val, btn) {
   parent.querySelectorAll('.outcome-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
 }
-
-function submitPredictions() {
+ 
+async function submitPredictions() {
   const name = document.getElementById('predictorSelect').value;
   if (!name) return showToast('Please select your name first');
-
+ 
   const preds = { name, week: STATE.currentWeek, timestamp: Date.now() };
   let valid = true;
   STATE.games.forEach(g => {
@@ -882,15 +886,45 @@ function submitPredictions() {
     };
   });
   if (!valid) return;
-
-  // Remove previous submission from same person this week
-  STATE.predictions = STATE.predictions.filter(p => !(p.name === name && p.week === STATE.currentWeek));
-  STATE.predictions.push(preds);
-  save();
-  showToast('✅ Predictions submitted!');
-  renderAdmin();
+ 
+  // Build a flat, human-readable payload for Formspree
+  const formData = { Name: name, Week: `Week ${STATE.currentWeek}` };
+  STATE.games.forEach(g => {
+    const p = preds[g.id];
+    const outcomeLabel = p.outcome === 'A' ? `${g.teamA} Win` : p.outcome === 'B' ? `${g.teamB} Win` : 'Draw';
+    formData[`${g.flagA} ${g.teamA} vs ${g.flagB} ${g.teamB} — Result`] = outcomeLabel;
+    formData[`${g.flagA} ${g.teamA} vs ${g.flagB} ${g.teamB} — Score`] = `${p.scoreA} - ${p.scoreB}`;
+    formData[`${g.flagA} ${g.teamA} vs ${g.flagB} ${g.teamB} — Goalscorer`] = p.scorer || 'None';
+  });
+ 
+  // Disable button while sending
+  const submitBtn = document.querySelector('.submit-section .btn-gold');
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting…'; }
+ 
+  try {
+    const res = await fetch('https://formspree.io/f/xlgkdkwj', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+ 
+    if (res.ok) {
+      // Also save locally
+      STATE.predictions = STATE.predictions.filter(p => !(p.name === name && p.week === STATE.currentWeek));
+      STATE.predictions.push(preds);
+      save();
+      showToast('✅ Predictions submitted!');
+      renderAdmin();
+    } else {
+      showToast('⚠️ Submission failed — please try again');
+    }
+  } catch (err) {
+    showToast('⚠️ Network error — please check your connection');
+  } finally {
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Predictions ✓'; }
+  }
 }
-
+ 
 // ═══════════════════════════════════════════════════════
 // LEADERBOARD
 // ═══════════════════════════════════════════════════════
@@ -909,22 +943,22 @@ function calcPoints(pred, results) {
   });
   return pts;
 }
-
+ 
 function renderLeaderboard() {
   const container = document.getElementById('leaderboardContainer');
   const weekPreds = STATE.predictions.filter(p => p.week === STATE.currentWeek);
-
+ 
   if (!weekPreds.length) {
     container.innerHTML = '<div class="empty-state"><div class="emoji">🏅</div><p>No predictions yet this week.</p></div>';
     return;
   }
-
+ 
   const scores = weekPreds.map(pred => ({
     name: pred.name,
     pts: calcPoints(pred, STATE.results),
     pred
   })).sort((a, b) => b.pts - a.pts);
-
+ 
   const medals = ['gold', 'silver', 'bronze'];
   container.innerHTML = scores.map((s, i) => {
     const cls = i < 3 ? medals[i] : '';
@@ -942,7 +976,7 @@ function renderLeaderboard() {
     `;
   }).join('');
 }
-
+ 
 // ═══════════════════════════════════════════════════════
 // ADMIN
 // ═══════════════════════════════════════════════════════
@@ -979,7 +1013,7 @@ function renderAdmin() {
       </div>
     </div>`;
   }).join('');
-
+ 
   // Submissions table
   const weekPreds = STATE.predictions.filter(p => p.week === STATE.currentWeek);
   const sub = document.getElementById('submissionsTable');
@@ -997,7 +1031,7 @@ function renderAdmin() {
       </tbody>
     </table>`;
   }
-
+ 
   // New week form
   const nwf = document.getElementById('newWeekForm');
   nwf.innerHTML = `
@@ -1018,7 +1052,7 @@ function renderAdmin() {
     </div>`).join('')}
   `;
 }
-
+ 
 function saveResult(gameId) {
   STATE.results[gameId] = {
     outcome: document.getElementById(`res_out_${gameId}`).value,
@@ -1030,7 +1064,7 @@ function saveResult(gameId) {
   showToast('Results saved ✓');
   renderAdmin();
 }
-
+ 
 function setupNewWeek() {
   const week = parseInt(document.getElementById('nw_week').value);
   const games = [0,1,2].map(i => ({
@@ -1051,7 +1085,7 @@ function setupNewWeek() {
   showToast(`✅ Week ${week} set up!`);
   renderAdmin();
 }
-
+ 
 // ═══════════════════════════════════════════════════════
 // UTILS
 // ═══════════════════════════════════════════════════════
@@ -1061,7 +1095,7 @@ function showToast(msg) {
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 3000);
 }
-
+ 
 function launchConfetti(n) {
   const colors = ['#FFD700','#00A550','#fff','#e63946','#4fc3f7'];
   for (let i = 0; i < n; i++) {
@@ -1074,7 +1108,7 @@ function launchConfetti(n) {
     }, i * 20);
   }
 }
-
+ 
 // ═══════════════════════════════════════════════════════
 // SAVE / LOAD
 // ═══════════════════════════════════════════════════════
@@ -1088,7 +1122,7 @@ function exportSave() {
   URL.revokeObjectURL(a.href);
   showToast('💾 Save file downloaded!');
 }
-
+ 
 function importSave(event) {
   const file = event.target.files[0];
   if (!file) return;
@@ -1110,12 +1144,57 @@ function importSave(event) {
   // Reset input so same file can be re-imported if needed
   event.target.value = '';
 }
-
+ 
 // ═══════════════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════════════
-renderParticipantsGrid();
-updatePredictorSelect();
+function applyDrawLockedState() {
+  const locked = STATE.drawComplete;
+  // Hide/show draw nav button
+  const navDraw = document.getElementById('navDraw');
+  if (navDraw) navDraw.style.display = locked ? 'none' : '';
+  // Show lock badge in nav
+  const lockBadge = document.getElementById('drawLockedBadge');
+  if (lockBadge) lockBadge.style.display = locked ? 'inline-flex' : 'none';
+  // Show lock banner on sweepstake page
+  const lockBanner = document.getElementById('drawLockedBanner');
+  if (lockBanner) lockBanner.style.display = locked ? 'flex' : 'none';
+}
+ 
+function renderTeamsInHat() {
+  const container = document.getElementById('teamsInHat');
+  if (!container) return;
+  container.innerHTML = ALL_TEAMS.map(t => `
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:8px;font-size:15px;">
+      <span style="font-size:22px">${t.flag}</span>
+      <span>${t.name}</span>
+    </div>
+  `).join('');
+}
+ 
+function initPage() {
+  renderParticipantsGrid();
+  updatePredictorSelect();
+  renderTeamsInHat();
+  applyDrawLockedState();
+ 
+  if (STATE.drawComplete) {
+    // Land on sweepstake page
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('sweepstakePage').classList.add('active');
+    const sweepBtn = document.querySelector('.nav-btn[onclick*="sweepstake"]');
+    if (sweepBtn) sweepBtn.classList.add('active');
+    renderSweepstake();
+  } else {
+    // Land on draw page
+    document.getElementById('drawPage').classList.add('active');
+    document.getElementById('navDraw').classList.add('active');
+  }
+}
+ 
+initPage();
 </script>
 </body>
 </html>
+ 

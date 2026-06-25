@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///Users/rc/Downloads/worldcup2026_12.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>World Cup 2026 – Office Sweepstake</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="./World Cup 2026 – Office Sweepstake - 15:06_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --green: #00A550;
@@ -181,30 +180,6 @@
  
   /* TEAM STATS TABLE */
   .stats-table-wrap { overflow-x: auto; margin-bottom: 40px; }
-  .stats-table { width: 100%; border-collapse: collapse; font-size: 16px; }
-  .stats-table thead tr { border-bottom: 2px solid rgba(255,215,0,0.2); }
-  .stats-table th {
-    padding: 10px 12px; text-align: center;
-    font-size: 13px; font-weight: 700; letter-spacing: .08em;
-    color: var(--gold); text-transform: uppercase; white-space: nowrap;
-  }
-  .stats-table th:nth-child(1),
-  .stats-table th:nth-child(2),
-  .stats-table th:nth-child(3) { text-align: left; }
-  .stats-table tbody tr { border-bottom: 1px solid var(--border); transition: background .15s; }
-  .stats-table tbody tr:hover { background: rgba(255,255,255,0.03); }
-  .stats-table td { padding: 11px 12px; text-align: center; vertical-align: middle; }
-  .stats-table td:nth-child(1) { text-align: left; font-weight: 600; color: var(--muted); width: 28px; padding-left: 8px; }
-  .stats-table td:nth-child(2) { text-align: left; font-weight: 600; }
-  .stats-table td:nth-child(3) { text-align: left; color: var(--muted); font-size: 12px; }
-  .td-flag { font-size: 20px; margin-right: 6px; }
-  .td-gd-pos { color: var(--green); font-weight: 700; }
-  .td-gd-neg { color: var(--red); font-weight: 700; }
-  .td-gd-neu { color: var(--muted); }
-  .stats-table tbody tr.no-games td { color: var(--muted); }
- 
-  /* TEAM STATS TABLE */
-  .stats-table-wrap { overflow-x: auto; margin-bottom: 40px; }
   .stats-table {
     width: 100%; border-collapse: collapse;
     font-size: 13px;
@@ -308,227 +283,19 @@
  
 <nav>
   <span class="nav-logo">⚽ WC26</span>
-  <button class="nav-btn active" onclick="showPage(&#39;teams&#39;, this)">🏅 Teams</button>
-  <button class="nav-btn" onclick="showPage(&#39;results&#39;, this)">📅 Weekly Results</button>
-  <button class="nav-btn" onclick="showPage(&#39;predict&#39;, this)">📝 Predict</button>
-  <button class="nav-btn" onclick="showPage(&#39;leaderboard&#39;, this)">🏆 Sweepstake Leaderboard</button>
-  <button class="nav-btn" onclick="showPage(&#39;predictions&#39;, this)">🎯 Prediction Leaderboard</button>
-  <button class="nav-btn" onclick="showPage(&#39;admin&#39;, this)">⚙️ Admin</button>
+  <button class="nav-btn active" onclick="showPage('teams', this)">🏅 Teams</button>
+  <button class="nav-btn" onclick="showPage('results', this)">📅 Weekly Results</button>
+  <button class="nav-btn" onclick="showPage('predict', this)">📝 Predict</button>
+  <button class="nav-btn" onclick="showPage('leaderboard', this)">🏆 Sweepstake Leaderboard</button>
+  <button class="nav-btn" onclick="showPage('predictions', this)">🎯 Prediction Leaderboard</button>
+  <button class="nav-btn" onclick="showPage('admin', this)">⚙️ Admin</button>
 </nav>
  
 <!-- TEAMS PAGE -->
 <div class="page active" id="teamsPage">
   <div style="padding: 8px 0 28px">
     <div class="section-title">🏅 SWEEPSTAKE TEAMS</div>
-    <div class="teams-grid" id="teamsGrid">
-    <div class="sw-card">
-      <div class="sw-person">Tim</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇳🇱</span>
-        <span>Netherlands</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Phil</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇰🇷</span>
-        <span>South Korea</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Ophelie</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇦🇷</span>
-        <span>Argentina</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Joanna</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇹🇷</span>
-        <span>Turkey</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Nathan</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇩🇪</span>
-        <span>Germany</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Karima</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇫🇷</span>
-        <span>France</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Katie</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇲🇽</span>
-        <span>Mexico</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Willliam</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇨🇦</span>
-        <span>Canada</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Luke A</div>
-      <div class="sw-team">
-        <span class="sw-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
-        <span>England</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Holly</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇨🇴</span>
-        <span>Colombia</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Tori</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇧🇪</span>
-        <span>Belgium</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Aime</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇵🇹</span>
-        <span>Portugal</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Shauna</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇭🇷</span>
-        <span>Croatia</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Raman</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇲🇦</span>
-        <span>Morocco</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Tom</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇦🇺</span>
-        <span>Australia</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Jono</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇺🇾</span>
-        <span>Uruguay</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Luke J</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇯🇵</span>
-        <span>Japan</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Ash</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇨🇭</span>
-        <span>Switzerland</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Elliot</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇪🇨</span>
-        <span>Ecuador</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Josh K</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇧🇷</span>
-        <span>Brazil</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Olly</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇷🇸</span>
-        <span>Serbia</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Dan</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇩🇰</span>
-        <span>Denmark</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Sam</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇸🇳</span>
-        <span>Senegal</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Lucas</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇪🇸</span>
-        <span>Spain</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Josh F</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇨🇿</span>
-        <span>Czech Republic</span>
-      </div>
-    </div>
-  
-    <div class="sw-card">
-      <div class="sw-person">Reece</div>
-      <div class="sw-team">
-        <span class="sw-flag">🇺🇸</span>
-        <span>USA</span>
-      </div>
-    </div>
-  </div>
+    <div class="teams-grid" id="teamsGrid"></div>
   </div>
 </div>
  
@@ -543,7 +310,7 @@
 <!-- PREDICT PAGE -->
 <div class="page" id="predictPage">
   <div style="padding: 8px 0 28px">
-    <div class="week-badge">⚽ WEEK 2 — PREDICTIONS OPEN</div>
+    <div class="week-badge" id="weekBadge">⚽ WEEK 4 — PREDICTIONS OPEN</div>
     <div class="section-title">📝 MAKE YOUR PREDICTIONS</div>
  
     <div class="points-guide">
@@ -555,7 +322,7 @@
     <div class="name-entry">
       <div>
         <label class="form-label">Your name</label>
-        <select id="predictorSelect" class="form-input" style="max-width:240px;background:var(--panel);border:2px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text)"><option value="">— Select your name —</option><option value="Tim">Tim</option><option value="Phil">Phil</option><option value="Ophelie">Ophelie</option><option value="Joanna">Joanna</option><option value="Nathan">Nathan</option><option value="Karima">Karima</option><option value="Katie">Katie</option><option value="Willliam">Willliam</option><option value="Luke A">Luke A</option><option value="Holly">Holly</option><option value="Tori">Tori</option><option value="Aime">Aime</option><option value="Shauna">Shauna</option><option value="Raman">Raman</option><option value="Tom">Tom</option><option value="Jono">Jono</option><option value="Luke J">Luke J</option><option value="Ash">Ash</option><option value="Elliot">Elliot</option><option value="Josh K">Josh K</option><option value="Olly">Olly</option><option value="Dan">Dan</option><option value="Sam">Sam</option><option value="Lucas">Lucas</option><option value="Josh F">Josh F</option><option value="Reece">Reece</option></select>
+        <select id="predictorSelect" class="form-input" style="max-width:240px;background:var(--panel);border:2px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text)"></select>
       </div>
     </div>
  
@@ -623,7 +390,7 @@
     </div>
     <div class="admin-card">
       <h3>🔄 New Week Setup</h3>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Start a new week — enter the 3 new games below. This preserves all historical points.</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Start a new week — enter the new games below. This preserves all historical points.</p>
       <div id="newWeekForm"></div>
       <button class="btn-primary" onclick="setupNewWeek()" style="margin-top:16px">Set New Week Games</button>
     </div>
@@ -666,231 +433,57 @@ const DRAW_RESULTS = [
 ];
  
 // ═══════════════════════════════════════════════════════
-// STATE
+// WEEK 4 GAMES
 // ═══════════════════════════════════════════════════════
-const WEEK2_GAMES = [
-    {
-      id: 'g1', teamA: 'France', flagA: '🇫🇷', teamB: 'Senegal', flagB: '🇸🇳',
-      players: {
-        A: [
-          {n:'Mike Maignan',p:'GK'},{n:'Robin Risser',p:'GK'},{n:'Brice Samba',p:'GK'},
-          {n:'Lucas Digne',p:'DEF'},{n:'Malo Gusto',p:'DEF'},{n:'Lucas Hernandez',p:'DEF'},{n:'Theo Hernandez',p:'DEF'},{n:'Ibrahima Konate',p:'DEF'},{n:'Jules Kounde',p:'DEF'},{n:'Maxence Lacroix',p:'DEF'},{n:'William Saliba',p:'DEF'},{n:'Dayot Upamecano',p:'DEF'},
-          {n:'N Golo Kante',p:'MID'},{n:'Manu Kone',p:'MID'},{n:'Adrien Rabiot',p:'MID'},{n:'Aurelien Tchouameni',p:'MID'},{n:'Warren Zaire-Emery',p:'MID'},
-          {n:'Maghnes Akliouche',p:'FWD'},{n:'Bradley Barcola',p:'FWD'},{n:'Rayan Cherki',p:'FWD'},{n:'Ousmane Dembele',p:'FWD'},{n:'Desire Doue',p:'FWD'},{n:'Jean-Philippe Mateta',p:'FWD'},{n:'Kylian Mbappe',p:'FWD'},{n:'Michael Olise',p:'FWD'},{n:'Marcus Thuram',p:'FWD'}
-        ],
-        B: [
-          {n:'Edouard Mendy',p:'GK'},{n:'Mory Diaw',p:'GK'},{n:'Yehvann Diouf',p:'GK'},
-          {n:'Krepin Diatta',p:'DEF'},{n:'Antoine Mendy',p:'DEF'},{n:'Kalidou Koulibaly',p:'DEF'},{n:'El Hadji Malick Diouf',p:'DEF'},{n:'Mamadou Sarr',p:'DEF'},{n:'Moussa Niakhate',p:'DEF'},{n:'Moustapha Mbow',p:'DEF'},{n:'Abdoulaye Seck',p:'DEF'},{n:'Ismail Jakobs',p:'DEF'},{n:'Ilay Camara',p:'DEF'},
-          {n:'Idrissa Gana Gueye',p:'MID'},{n:'Pape Gueye',p:'MID'},{n:'Lamine Camara',p:'MID'},{n:'Habib Diarra',p:'MID'},{n:'Pathe Ciss',p:'MID'},{n:'Pape Matar Sarr',p:'MID'},{n:'Bara Sapoko Ndiaye',p:'MID'},
-          {n:'Sadio Mane',p:'FWD'},{n:'Ismaila Sarr',p:'FWD'},{n:'Iliman Ndiaye',p:'FWD'},{n:'Assane Diao',p:'FWD'},{n:'Ibrahim Mbaye',p:'FWD'},{n:'Nicolas Jackson',p:'FWD'},{n:'Bamba Dieng',p:'FWD'},{n:'Cherif Ndiaye',p:'FWD'}
-        ]
-      }
-    },
-    {
-      id: 'g2', teamA: 'Argentina', flagA: '🇦🇷', teamB: 'Algeria', flagB: '🇩🇿',
-      players: {
-        A: [
-          {n:'Emiliano Martinez',p:'GK'},{n:'Juan Musso',p:'GK'},{n:'Geronimo Rulli',p:'GK'},
-          {n:'Leonardo Balerdi',p:'DEF'},{n:'Lisandro Martinez',p:'DEF'},{n:'Facundo Medina',p:'DEF'},{n:'Nahuel Molina',p:'DEF'},{n:'Gonzalo Montiel',p:'DEF'},{n:'Nicolas Otamendi',p:'DEF'},{n:'Cristian Romero',p:'DEF'},{n:'Nicolas Tagliafico',p:'DEF'},
-          {n:'Valentin Barco',p:'MID'},{n:'Rodrigo De Paul',p:'MID'},{n:'Enzo Fernandez',p:'MID'},{n:'Giovani Lo Celso',p:'MID'},{n:'Alexis Mac Allister',p:'MID'},{n:'Exequiel Palacios',p:'MID'},{n:'Leandro Paredes',p:'MID'},
-          {n:'Thiago Almada',p:'FWD'},{n:'Julian Alvarez',p:'FWD'},{n:'Nicolas Gonzalez',p:'FWD'},{n:'Jose Manuel Lopez',p:'FWD'},{n:'Lautaro Martinez',p:'FWD'},{n:'Lionel Messi',p:'FWD'},{n:'Nicolas Paz',p:'FWD'},{n:'Giuliano Simeone',p:'FWD'}
-        ],
-        B: [
-          {n:'Luca Zidane',p:'GK'},{n:'Oussama Benbot',p:'GK'},{n:'Melvin Mastil',p:'GK'},
-          {n:'Aissa Mandi',p:'DEF'},{n:'Ramy Bensebaini',p:'DEF'},{n:'Mohamed Amine Tougai',p:'DEF'},{n:'Rayan Ait-Nouri',p:'DEF'},{n:'Jaouen Hadjam',p:'DEF'},{n:'Rafik Belghali',p:'DEF'},{n:'Zineddine Belaid',p:'DEF'},{n:'Achref Abada',p:'DEF'},{n:'Samir Chergui',p:'DEF'},
-          {n:'Nabil Bentaleb',p:'MID'},{n:'Ramiz Zerrouki',p:'MID'},{n:'Hicham Boudaoui',p:'MID'},{n:'Fares Chaibi',p:'MID'},{n:'Houssem Aouar',p:'MID'},{n:'Ibrahim Maza',p:'MID'},{n:'Yacine Titraoui',p:'MID'},
-          {n:'Riyad Mahrez',p:'FWD'},{n:'Mohamed Amoura',p:'FWD'},{n:'Amine Gouiri',p:'FWD'},{n:'Anis Hadj Moussa',p:'FWD'},{n:'Adil Boulbina',p:'FWD'},{n:'Nadhir Benbouali',p:'FWD'},{n:'Fares Ghedjemis',p:'FWD'}
-        ]
-      }
-    },
-    {
-      id: 'g3', teamA: 'England', flagA: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', teamB: 'Croatia', flagB: '🇭🇷',
-      players: {
-        A: [
-          {n:'Jordan Pickford',p:'GK'},{n:'Dean Henderson',p:'GK'},{n:'James Trafford',p:'GK'},
-          {n:'Reece James',p:'DEF'},{n:'Ezri Konsa',p:'DEF'},{n:'Jarell Quansah',p:'DEF'},{n:'John Stones',p:'DEF'},{n:'Marc Guehi',p:'DEF'},{n:'Dan Burn',p:'DEF'},{n:'Nico O Reilly',p:'DEF'},{n:'Djed Spence',p:'DEF'},{n:'Tino Livramento',p:'DEF'},
-          {n:'Declan Rice',p:'MID'},{n:'Elliot Anderson',p:'MID'},{n:'Kobbie Mainoo',p:'MID'},{n:'Jordan Henderson',p:'MID'},{n:'Morgan Rogers',p:'MID'},{n:'Jude Bellingham',p:'MID'},{n:'Eberechi Eze',p:'MID'},
-          {n:'Harry Kane',p:'FWD'},{n:'Ivan Toney',p:'FWD'},{n:'Ollie Watkins',p:'FWD'},{n:'Bukayo Saka',p:'FWD'},{n:'Marcus Rashford',p:'FWD'},{n:'Anthony Gordon',p:'FWD'},{n:'Noni Madueke',p:'FWD'}
-        ],
-        B: [
-          {n:'Dominik Livakovic',p:'GK'},{n:'Dominik Kotarski',p:'GK'},{n:'Ivor Pandur',p:'GK'},
-          {n:'Josko Gvardiol',p:'DEF'},{n:'Duje Caleta-Car',p:'DEF'},{n:'Josip Sutalo',p:'DEF'},{n:'Josip Stanisic',p:'DEF'},{n:'Marin Pongracic',p:'DEF'},{n:'Martin Erlic',p:'DEF'},{n:'Luka Vuskovic',p:'DEF'},
-          {n:'Luka Modric',p:'MID'},{n:'Mateo Kovacic',p:'MID'},{n:'Mario Pasalic',p:'MID'},{n:'Nikola Vlasic',p:'MID'},{n:'Luka Sucic',p:'MID'},{n:'Martin Baturina',p:'MID'},{n:'Kristijan Jakic',p:'MID'},{n:'Petar Sucic',p:'MID'},{n:'Nikola Moro',p:'MID'},{n:'Toni Fruk',p:'MID'},
-          {n:'Ivan Perisic',p:'FWD'},{n:'Andrej Kramaric',p:'FWD'},{n:'Ante Budimir',p:'FWD'},{n:'Marco Pasalic',p:'FWD'},{n:'Petar Musa',p:'FWD'},{n:'Igor Matanovic',p:'FWD'}
-        ]
-      }
-    },
-    {
-      id: 'g4', teamA: 'Portugal', flagA: '🇵🇹', teamB: 'DR Congo', flagB: '🇨🇩',
-      players: {
-        A: [
-          {n:'Diogo Costa',p:'GK'},{n:'Jose Sa',p:'GK'},{n:'Rui Silva',p:'GK'},{n:'Ricardo Velho',p:'GK'},
-          {n:'Diogo Dalot',p:'DEF'},{n:'Matheus Nunes',p:'DEF'},{n:'Nelson Semedo',p:'DEF'},{n:'Joao Cancelo',p:'DEF'},{n:'Nuno Mendes',p:'DEF'},{n:'Goncalo Inacio',p:'DEF'},{n:'Renato Veiga',p:'DEF'},{n:'Ruben Dias',p:'DEF'},{n:'Tomas Araujo',p:'DEF'},
-          {n:'Ruben Neves',p:'MID'},{n:'Samuel Costa',p:'MID'},{n:'Joao Neves',p:'MID'},{n:'Vitinha',p:'MID'},{n:'Bruno Fernandes',p:'MID'},{n:'Bernardo Silva',p:'MID'},
-          {n:'Joao Felix',p:'FWD'},{n:'Francisco Trincao',p:'FWD'},{n:'Francisco Conceicao',p:'FWD'},{n:'Pedro Neto',p:'FWD'},{n:'Rafael Leao',p:'FWD'},{n:'Goncalo Guedes',p:'FWD'},{n:'Goncalo Ramos',p:'FWD'},{n:'Cristiano Ronaldo',p:'FWD'}
-        ],
-        B: [
-          {n:'Matthieu Epolo',p:'GK'},{n:'Timothy Fayulu',p:'GK'},{n:'Lionel Mpasi',p:'GK'},
-          {n:'Dylan Batubinsika',p:'DEF'},{n:'Rocky Bushiri',p:'DEF'},{n:'Gedeon Kalulu',p:'DEF'},{n:'Steve Kapuadi',p:'DEF'},{n:'Joris Kayembe',p:'DEF'},{n:'Arthur Masuaku',p:'DEF'},{n:'Chancel Mbemba',p:'DEF'},{n:'Axel Tuanzebe',p:'DEF'},{n:'Aaron Wan-Bissaka',p:'DEF'},
-          {n:'Theo Bongonda',p:'MID'},{n:'Brian Cipenga',p:'MID'},{n:'Meshack Elia',p:'MID'},{n:'Gael Kakuta',p:'MID'},{n:'Edo Kayembe',p:'MID'},{n:'Nathanael Mbuku',p:'MID'},{n:'Samuel Moutoussamy',p:'MID'},{n:'Ngal ayel Mukau',p:'MID'},{n:'Charles Pickel',p:'MID'},{n:'Noah Sadiki',p:'MID'},
-          {n:'Cedric Bakambu',p:'FWD'},{n:'Simon Banza',p:'FWD'},{n:'Fiston Mayele',p:'FWD'},{n:'Yoane Wissa',p:'FWD'}
-        ]
-      }
-    },
-  ];
- 
-const WEEK3_GAMES = [
-    {
-      id: 'g1', teamA: 'Scotland', flagA: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', teamB: 'Morocco', flagB: '🇲🇦',
-      players: {
-        A: [
-          {n:'Craig Gordon',p:'GK'},{n:'Angus Gunn',p:'GK'},{n:'Liam Kelly',p:'GK'},
-          {n:'Grant Hanley',p:'DEF'},{n:'Jack Hendry',p:'DEF'},{n:'Aaron Hickey',p:'DEF'},{n:'Dom Hyam',p:'DEF'},{n:'Scott McKenna',p:'DEF'},{n:'Nathan Patterson',p:'DEF'},{n:'Anthony Ralston',p:'DEF'},{n:'Andy Robertson',p:'DEF'},{n:'John Souttar',p:'DEF'},{n:'Kieran Tierney',p:'DEF'},
-          {n:'Ryan Christie',p:'MID'},{n:'Findlay Curtis',p:'MID'},{n:'Lewis Ferguson',p:'MID'},{n:'Ben Gannon-Doak',p:'MID'},{n:'Billy Gilmour',p:'MID'},{n:'John McGinn',p:'MID'},{n:'Kenny McLean',p:'MID'},{n:'Scott McTominay',p:'MID'},
-          {n:'Che Adams',p:'FWD'},{n:'Lyndon Dykes',p:'FWD'},{n:'George Hirst',p:'FWD'},{n:'Lawrence Shankland',p:'FWD'},{n:'Ross Stewart',p:'FWD'}
-        ],
-        B: [
-          {n:'Yassine Bounou',p:'GK'},{n:'Munir El Kajoui',p:'GK'},{n:'Reda Tagnaouti',p:'GK'},
-          {n:'Noussair Mazraoui',p:'DEF'},{n:'Anass Salah-Eddine',p:'DEF'},{n:'Youssef Belammari',p:'DEF'},{n:'Achraf Hakimi',p:'DEF'},{n:'Zakaria El Ouahdi',p:'DEF'},{n:'Chadi Riad',p:'DEF'},{n:'Nayef Aguerd',p:'DEF'},{n:'Redouane Halhal',p:'DEF'},{n:'Issa Diop',p:'DEF'},
-          {n:'Samir El Mourabet',p:'MID'},{n:'Ayyoub Bouaddi',p:'MID'},{n:'Neil El Aynaoui',p:'MID'},{n:'Sofyan Amrabat',p:'MID'},{n:'Azzedine Ounahi',p:'MID'},{n:'Bilal El Khannouss',p:'MID'},{n:'Ismael Saibari',p:'MID'},
-          {n:'Abde Ezzalzouli',p:'FWD'},{n:'Chemsdine Talbi',p:'FWD'},{n:'Soufiane Rahimi',p:'FWD'},{n:'Ayoub El Kaabi',p:'FWD'},{n:'Brahim Diaz',p:'FWD'},{n:'Gessime Yassine',p:'FWD'},{n:'Ayoube Amaimouni',p:'FWD'}
-        ]
-      }
-    },
-    {
-      id: 'g2', teamA: 'Spain', flagA: '🇪🇸', teamB: 'Saudi Arabia', flagB: '🇸🇦',
-      players: {
-        A: [
-          {n:'Unai Simon',p:'GK'},{n:'David Raya',p:'GK'},{n:'Joan Garcia',p:'GK'},
-          {n:'Marc Cucurella',p:'DEF'},{n:'Pau Cubarsi',p:'DEF'},{n:'Aymeric Laporte',p:'DEF'},{n:'Alejandro Grimaldo',p:'DEF'},{n:'Pedro Porro',p:'DEF'},{n:'Eric Garcia',p:'DEF'},{n:'Marcos Llorente',p:'DEF'},{n:'Marc Pubill',p:'DEF'},
-          {n:'Gavi',p:'MID'},{n:'Rodri',p:'MID'},{n:'Pedri',p:'MID'},{n:'Martin Zubimendi',p:'MID'},{n:'Fabian Ruiz',p:'MID'},{n:'Alex Baena',p:'MID'},{n:'Mikel Merino',p:'MID'},
-          {n:'Lamine Yamal',p:'FWD'},{n:'Nico Williams',p:'FWD'},{n:'Dani Olmo',p:'FWD'},{n:'Ferran Torres',p:'FWD'},{n:'Mikel Oyarzabal',p:'FWD'},{n:'Yeremy Pino',p:'FWD'},{n:'Borja Iglesias',p:'FWD'},{n:'Victor Munoz',p:'FWD'}
-        ],
-        B: [
-          {n:'Nawaf Al Aqidi',p:'GK'},{n:'Mohammed Al Owais',p:'GK'},{n:'Ahmed Al Kassar',p:'GK'},
-          {n:'Abdulelah Al Amri',p:'DEF'},{n:'Hassan Tambakti',p:'DEF'},{n:'Jehad Thikri',p:'DEF'},{n:'Ali Lajami',p:'DEF'},{n:'Hassan Kadesh',p:'DEF'},{n:'Saud Abdulhamid',p:'DEF'},{n:'Mohammed Abu Al Shamat',p:'DEF'},{n:'Ali Majrashi',p:'DEF'},{n:'Moteb Al Harbi',p:'DEF'},{n:'Nawaf Boushal',p:'DEF'},
-          {n:'Mohammed Kanno',p:'MID'},{n:'Abdullah Al Khaibari',p:'MID'},{n:'Ziyad Al Johani',p:'MID'},{n:'Nasser Al Dawsari',p:'MID'},{n:'Musab Al Juwayr',p:'MID'},{n:'Alaa Al Hajji',p:'MID'},{n:'Salem Al Dawsari',p:'MID'},
-          {n:'Khalid Al Ghannam',p:'FWD'},{n:'Ayman Yahya',p:'FWD'},{n:'Sultan Mandash',p:'FWD'},{n:'Feras Al Buraikan',p:'FWD'},{n:'Saleh Al Shehri',p:'FWD'},{n:'Abdullah Al Hamdan',p:'FWD'}
-        ]
-      }
-    },
-    {
-      id: 'g3', teamA: 'Argentina', flagA: '🇦🇷', teamB: 'Austria', flagB: '🇦🇹',
-      players: {
-        A: [
-          {n:'Emiliano Martinez',p:'GK'},{n:'Juan Musso',p:'GK'},{n:'Geronimo Rulli',p:'GK'},
-          {n:'Leonardo Balerdi',p:'DEF'},{n:'Lisandro Martinez',p:'DEF'},{n:'Facundo Medina',p:'DEF'},{n:'Nahuel Molina',p:'DEF'},{n:'Gonzalo Montiel',p:'DEF'},{n:'Nicolas Otamendi',p:'DEF'},{n:'Cristian Romero',p:'DEF'},{n:'Nicolas Tagliafico',p:'DEF'},
-          {n:'Valentin Barco',p:'MID'},{n:'Rodrigo De Paul',p:'MID'},{n:'Enzo Fernandez',p:'MID'},{n:'Giovani Lo Celso',p:'MID'},{n:'Alexis Mac Allister',p:'MID'},{n:'Exequiel Palacios',p:'MID'},{n:'Leandro Paredes',p:'MID'},
-          {n:'Thiago Almada',p:'FWD'},{n:'Julian Alvarez',p:'FWD'},{n:'Nicolas Gonzalez',p:'FWD'},{n:'Jose Manuel Lopez',p:'FWD'},{n:'Lautaro Martinez',p:'FWD'},{n:'Lionel Messi',p:'FWD'},{n:'Nicolas Paz',p:'FWD'},{n:'Giuliano Simeone',p:'FWD'}
-        ],
-        B: [
-          {n:'Alexander Schlager',p:'GK'},{n:'Florian Wiegele',p:'GK'},{n:'Patrick Pentz',p:'GK'},
-          {n:'David Affengruber',p:'DEF'},{n:'Kevin Danso',p:'DEF'},{n:'Stefan Posch',p:'DEF'},{n:'David Alaba',p:'DEF'},{n:'Philipp Lienhart',p:'DEF'},{n:'Phillipp Mwene',p:'DEF'},{n:'Alexander Prass',p:'DEF'},{n:'Marco Friedl',p:'DEF'},{n:'Michael Svoboda',p:'DEF'},
-          {n:'Xaver Schlager',p:'MID'},{n:'Nicolas Seiwald',p:'MID'},{n:'Marcel Sabitzer',p:'MID'},{n:'Florian Grillitsch',p:'MID'},{n:'Carney Chukwuemeka',p:'MID'},{n:'Romano Schmid',p:'MID'},{n:'Christoph Baumgartner',p:'MID'},{n:'Konrad Laimer',p:'MID'},{n:'Patrick Wimmer',p:'MID'},{n:'Paul Wanner',p:'MID'},{n:'Alessandro Schopf',p:'MID'},
-          {n:'Marko Arnautovic',p:'FWD'},{n:'Michael Gregoritsch',p:'FWD'},{n:'Sasa Kalajdzic',p:'FWD'}
-        ]
-      }
-    },
-    {
-      id: 'g4', teamA: 'England', flagA: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', teamB: 'Ghana', flagB: '🇬🇭',
-      players: {
-        A: [
-          {n:'Jordan Pickford',p:'GK'},{n:'Dean Henderson',p:'GK'},{n:'James Trafford',p:'GK'},
-          {n:'Reece James',p:'DEF'},{n:'Ezri Konsa',p:'DEF'},{n:'Jarell Quansah',p:'DEF'},{n:'John Stones',p:'DEF'},{n:'Marc Guehi',p:'DEF'},{n:'Dan Burn',p:'DEF'},{n:'Nico O Reilly',p:'DEF'},{n:'Djed Spence',p:'DEF'},{n:'Tino Livramento',p:'DEF'},
-          {n:'Declan Rice',p:'MID'},{n:'Elliot Anderson',p:'MID'},{n:'Kobbie Mainoo',p:'MID'},{n:'Jordan Henderson',p:'MID'},{n:'Morgan Rogers',p:'MID'},{n:'Jude Bellingham',p:'MID'},{n:'Eberechi Eze',p:'MID'},
-          {n:'Harry Kane',p:'FWD'},{n:'Ivan Toney',p:'FWD'},{n:'Ollie Watkins',p:'FWD'},{n:'Bukayo Saka',p:'FWD'},{n:'Marcus Rashford',p:'FWD'},{n:'Anthony Gordon',p:'FWD'},{n:'Noni Madueke',p:'FWD'}
-        ],
-        B: [
-          {n:'Joseph Anang',p:'GK'},{n:'Benjamin Asare',p:'GK'},{n:'Lawrence Ati-Zigi',p:'GK'},
-          {n:'Jonas Adjetey',p:'DEF'},{n:'Rahman Baba',p:'DEF'},{n:'Derrick Luckassen',p:'DEF'},{n:'Gideon Mensah',p:'DEF'},{n:'Abdul Mumin',p:'DEF'},{n:'Jerome Opoku',p:'DEF'},{n:'Kojo Peprah Oppong',p:'DEF'},{n:'Alidu Seidu',p:'DEF'},{n:'Marvin Senaya',p:'DEF'},
-          {n:'Augustine Boakye',p:'MID'},{n:'Elisha Owusu',p:'MID'},{n:'Thomas Partey',p:'MID'},{n:'Antoine Semenyo',p:'MID'},{n:'Kwasi Sibo',p:'MID'},{n:'Caleb Yirenkyi',p:'MID'},{n:'Abdul Fatawu Issahaku',p:'MID'},
-          {n:'Prince Kwabena Adu',p:'FWD'},{n:'Jordan Ayew',p:'FWD'},{n:'Christopher Bonsu Baah',p:'FWD'},{n:'Ernest Nuamah',p:'FWD'},{n:'Kamaldeen Sulemana',p:'FWD'},{n:'Brandon Thomas-Asante',p:'FWD'},{n:'Inaki Williams',p:'FWD'}
-        ]
-      }
-    },
+const WEEK4_GAMES = [
+  {
+    id: 'g1', teamA: 'Norway', flagA: '🇳🇴', teamB: 'France', flagB: '🇫🇷',
+    players: {
+      A: [
+        {n:'Orjan Nyland',p:'GK'},{n:'Sander Tangvik',p:'GK'},{n:'Egil Selvik',p:'GK'},
+        {n:'Kristoffer Ajer',p:'DEF'},{n:'Leo Ostigard',p:'DEF'},{n:'David Moller Wolfe',p:'DEF'},{n:'Fredrik Andre Bjorkan',p:'DEF'},{n:'Marcus Holmgren Pedersen',p:'DEF'},{n:'Torbjorn Heggem',p:'DEF'},{n:'Sondre Langas',p:'DEF'},{n:'Henrik Falchener',p:'DEF'},
+        {n:'Morten Thorsby',p:'MID'},{n:'Patrick Berg',p:'MID'},{n:'Sander Berge',p:'MID'},{n:'Martin Odegaard',p:'MID'},{n:'Fredrik Aursnes',p:'MID'},{n:'Kristian Thorstvedt',p:'MID'},{n:'Thelo Aasgaard',p:'MID'},{n:'Andreas Schjelderup',p:'MID'},{n:'Oscar Bobb',p:'MID'},{n:'Jens Petter Hauge',p:'MID'},
+        {n:'Alexander Sorloth',p:'FWD'},{n:'Erling Haaland',p:'FWD'},{n:'Jorgen Strand Larsen',p:'FWD'},{n:'Antonio Nusa',p:'FWD'},{n:'Julian Ryerson',p:'FWD'}
+      ],
+      B: [
+        {n:'Mike Maignan',p:'GK'},{n:'Robin Risser',p:'GK'},{n:'Brice Samba',p:'GK'},
+        {n:'Lucas Digne',p:'DEF'},{n:'Malo Gusto',p:'DEF'},{n:'Lucas Hernandez',p:'DEF'},{n:'Theo Hernandez',p:'DEF'},{n:'Ibrahima Konate',p:'DEF'},{n:'Jules Kounde',p:'DEF'},{n:'Maxence Lacroix',p:'DEF'},{n:'William Saliba',p:'DEF'},{n:'Dayot Upamecano',p:'DEF'},
+        {n:'N Golo Kante',p:'MID'},{n:'Manu Kone',p:'MID'},{n:'Adrien Rabiot',p:'MID'},{n:'Aurelien Tchouameni',p:'MID'},{n:'Warren Zaire-Emery',p:'MID'},
+        {n:'Maghnes Akliouche',p:'FWD'},{n:'Bradley Barcola',p:'FWD'},{n:'Rayan Cherki',p:'FWD'},{n:'Ousmane Dembele',p:'FWD'},{n:'Desire Doue',p:'FWD'},{n:'Jean-Philippe Mateta',p:'FWD'},{n:'Kylian Mbappe',p:'FWD'},{n:'Michael Olise',p:'FWD'},{n:'Marcus Thuram',p:'FWD'}
+      ]
+    }
+  },
+  {
+    id: 'g2', teamA: 'Panama', flagA: '🇵🇦', teamB: 'England', flagB: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    players: {
+      A: [
+        {n:'Luis Mejia',p:'GK'},{n:'Orlando Mosquera',p:'GK'},{n:'Cesar Samudio',p:'GK'},
+        {n:'Eric Davis',p:'DEF'},{n:'Fidel Escobar',p:'DEF'},{n:'Michael Amir Murillo',p:'DEF'},{n:'Roderick Miller',p:'DEF'},{n:'Andres Andrade',p:'DEF'},{n:'Cesar Blackman',p:'DEF'},{n:'Jose Cordoba',p:'DEF'},{n:'Jiovany Ramos',p:'DEF'},{n:'Jorge Gutierrez',p:'DEF'},{n:'Edgardo Farina',p:'DEF'},
+        {n:'Anibal Godoy',p:'MID'},{n:'Alberto Quintero',p:'MID'},{n:'Yoel Barcenas',p:'MID'},{n:'Adalberto Carrasquilla',p:'MID'},{n:'Jose Luis Rodriguez',p:'MID'},{n:'Cristian Martinez',p:'MID'},{n:'Cesar Yanis',p:'MID'},{n:'Carlos Harvey',p:'MID'},{n:'Azarias Londono',p:'MID'},
+        {n:'Jose Fajardo',p:'FWD'},{n:'Ismael Diaz',p:'FWD'},{n:'Cecilio Waterman',p:'FWD'},{n:'Tomas Rodriguez',p:'FWD'}
+      ],
+      B: [
+        {n:'Jordan Pickford',p:'GK'},{n:'Dean Henderson',p:'GK'},{n:'James Trafford',p:'GK'},
+        {n:'Reece James',p:'DEF'},{n:'Ezri Konsa',p:'DEF'},{n:'Jarell Quansah',p:'DEF'},{n:'John Stones',p:'DEF'},{n:'Marc Guehi',p:'DEF'},{n:'Dan Burn',p:'DEF'},{n:'Nico O Reilly',p:'DEF'},{n:'Djed Spence',p:'DEF'},{n:'Tino Livramento',p:'DEF'},
+        {n:'Declan Rice',p:'MID'},{n:'Elliot Anderson',p:'MID'},{n:'Kobbie Mainoo',p:'MID'},{n:'Jordan Henderson',p:'MID'},{n:'Morgan Rogers',p:'MID'},{n:'Jude Bellingham',p:'MID'},{n:'Eberechi Eze',p:'MID'},
+        {n:'Harry Kane',p:'FWD'},{n:'Ivan Toney',p:'FWD'},{n:'Ollie Watkins',p:'FWD'},{n:'Bukayo Saka',p:'FWD'},{n:'Marcus Rashford',p:'FWD'},{n:'Anthony Gordon',p:'FWD'},{n:'Noni Madueke',p:'FWD'}
+      ]
+    }
+  },
 ];
  
 let STATE = JSON.parse(localStorage.getItem('wc26_state') || 'null') || {
-  currentWeek: 2,
-  games: [
-    {
-      id: 'g1', teamA: 'France', flagA: '🇫🇷', teamB: 'Senegal', flagB: '🇸🇳',
-      players: {
-        A: [
-          {n:'Mike Maignan',p:'GK'},{n:'Robin Risser',p:'GK'},{n:'Brice Samba',p:'GK'},
-          {n:'Lucas Digne',p:'DEF'},{n:'Malo Gusto',p:'DEF'},{n:'Lucas Hernandez',p:'DEF'},{n:'Theo Hernandez',p:'DEF'},{n:'Ibrahima Konate',p:'DEF'},{n:'Jules Kounde',p:'DEF'},{n:'Maxence Lacroix',p:'DEF'},{n:'William Saliba',p:'DEF'},{n:'Dayot Upamecano',p:'DEF'},
-          {n:'N Golo Kante',p:'MID'},{n:'Manu Kone',p:'MID'},{n:'Adrien Rabiot',p:'MID'},{n:'Aurelien Tchouameni',p:'MID'},{n:'Warren Zaire-Emery',p:'MID'},
-          {n:'Maghnes Akliouche',p:'FWD'},{n:'Bradley Barcola',p:'FWD'},{n:'Rayan Cherki',p:'FWD'},{n:'Ousmane Dembele',p:'FWD'},{n:'Desire Doue',p:'FWD'},{n:'Jean-Philippe Mateta',p:'FWD'},{n:'Kylian Mbappe',p:'FWD'},{n:'Michael Olise',p:'FWD'},{n:'Marcus Thuram',p:'FWD'}
-        ],
-        B: [
-          {n:'Edouard Mendy',p:'GK'},{n:'Mory Diaw',p:'GK'},{n:'Yehvann Diouf',p:'GK'},
-          {n:'Krepin Diatta',p:'DEF'},{n:'Antoine Mendy',p:'DEF'},{n:'Kalidou Koulibaly',p:'DEF'},{n:'El Hadji Malick Diouf',p:'DEF'},{n:'Mamadou Sarr',p:'DEF'},{n:'Moussa Niakhate',p:'DEF'},{n:'Moustapha Mbow',p:'DEF'},{n:'Abdoulaye Seck',p:'DEF'},{n:'Ismail Jakobs',p:'DEF'},{n:'Ilay Camara',p:'DEF'},
-          {n:'Idrissa Gana Gueye',p:'MID'},{n:'Pape Gueye',p:'MID'},{n:'Lamine Camara',p:'MID'},{n:'Habib Diarra',p:'MID'},{n:'Pathe Ciss',p:'MID'},{n:'Pape Matar Sarr',p:'MID'},{n:'Bara Sapoko Ndiaye',p:'MID'},
-          {n:'Sadio Mane',p:'FWD'},{n:'Ismaila Sarr',p:'FWD'},{n:'Iliman Ndiaye',p:'FWD'},{n:'Assane Diao',p:'FWD'},{n:'Ibrahim Mbaye',p:'FWD'},{n:'Nicolas Jackson',p:'FWD'},{n:'Bamba Dieng',p:'FWD'},{n:'Cherif Ndiaye',p:'FWD'}
-        ]
-      }
-    },
-    {
-      id: 'g2', teamA: 'Argentina', flagA: '🇦🇷', teamB: 'Algeria', flagB: '🇩🇿',
-      players: {
-        A: [
-          {n:'Emiliano Martinez',p:'GK'},{n:'Juan Musso',p:'GK'},{n:'Geronimo Rulli',p:'GK'},
-          {n:'Leonardo Balerdi',p:'DEF'},{n:'Lisandro Martinez',p:'DEF'},{n:'Facundo Medina',p:'DEF'},{n:'Nahuel Molina',p:'DEF'},{n:'Gonzalo Montiel',p:'DEF'},{n:'Nicolas Otamendi',p:'DEF'},{n:'Cristian Romero',p:'DEF'},{n:'Nicolas Tagliafico',p:'DEF'},
-          {n:'Valentin Barco',p:'MID'},{n:'Rodrigo De Paul',p:'MID'},{n:'Enzo Fernandez',p:'MID'},{n:'Giovani Lo Celso',p:'MID'},{n:'Alexis Mac Allister',p:'MID'},{n:'Exequiel Palacios',p:'MID'},{n:'Leandro Paredes',p:'MID'},
-          {n:'Thiago Almada',p:'FWD'},{n:'Julian Alvarez',p:'FWD'},{n:'Nicolas Gonzalez',p:'FWD'},{n:'Jose Manuel Lopez',p:'FWD'},{n:'Lautaro Martinez',p:'FWD'},{n:'Lionel Messi',p:'FWD'},{n:'Nicolas Paz',p:'FWD'},{n:'Giuliano Simeone',p:'FWD'}
-        ],
-        B: [
-          {n:'Luca Zidane',p:'GK'},{n:'Oussama Benbot',p:'GK'},{n:'Melvin Mastil',p:'GK'},
-          {n:'Aissa Mandi',p:'DEF'},{n:'Ramy Bensebaini',p:'DEF'},{n:'Mohamed Amine Tougai',p:'DEF'},{n:'Rayan Ait-Nouri',p:'DEF'},{n:'Jaouen Hadjam',p:'DEF'},{n:'Rafik Belghali',p:'DEF'},{n:'Zineddine Belaid',p:'DEF'},{n:'Achref Abada',p:'DEF'},{n:'Samir Chergui',p:'DEF'},
-          {n:'Nabil Bentaleb',p:'MID'},{n:'Ramiz Zerrouki',p:'MID'},{n:'Hicham Boudaoui',p:'MID'},{n:'Fares Chaibi',p:'MID'},{n:'Houssem Aouar',p:'MID'},{n:'Ibrahim Maza',p:'MID'},{n:'Yacine Titraoui',p:'MID'},
-          {n:'Riyad Mahrez',p:'FWD'},{n:'Mohamed Amoura',p:'FWD'},{n:'Amine Gouiri',p:'FWD'},{n:'Anis Hadj Moussa',p:'FWD'},{n:'Adil Boulbina',p:'FWD'},{n:'Nadhir Benbouali',p:'FWD'},{n:'Fares Ghedjemis',p:'FWD'}
-        ]
-      }
-    },
-    {
-      id: 'g3', teamA: 'England', flagA: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', teamB: 'Croatia', flagB: '🇭🇷',
-      players: {
-        A: [
-          {n:'Jordan Pickford',p:'GK'},{n:'Dean Henderson',p:'GK'},{n:'James Trafford',p:'GK'},
-          {n:'Reece James',p:'DEF'},{n:'Ezri Konsa',p:'DEF'},{n:'Jarell Quansah',p:'DEF'},{n:'John Stones',p:'DEF'},{n:'Marc Guehi',p:'DEF'},{n:'Dan Burn',p:'DEF'},{n:'Nico O Reilly',p:'DEF'},{n:'Djed Spence',p:'DEF'},{n:'Tino Livramento',p:'DEF'},
-          {n:'Declan Rice',p:'MID'},{n:'Elliot Anderson',p:'MID'},{n:'Kobbie Mainoo',p:'MID'},{n:'Jordan Henderson',p:'MID'},{n:'Morgan Rogers',p:'MID'},{n:'Jude Bellingham',p:'MID'},{n:'Eberechi Eze',p:'MID'},
-          {n:'Harry Kane',p:'FWD'},{n:'Ivan Toney',p:'FWD'},{n:'Ollie Watkins',p:'FWD'},{n:'Bukayo Saka',p:'FWD'},{n:'Marcus Rashford',p:'FWD'},{n:'Anthony Gordon',p:'FWD'},{n:'Noni Madueke',p:'FWD'}
-        ],
-        B: [
-          {n:'Dominik Livakovic',p:'GK'},{n:'Dominik Kotarski',p:'GK'},{n:'Ivor Pandur',p:'GK'},
-          {n:'Josko Gvardiol',p:'DEF'},{n:'Duje Caleta-Car',p:'DEF'},{n:'Josip Sutalo',p:'DEF'},{n:'Josip Stanisic',p:'DEF'},{n:'Marin Pongracic',p:'DEF'},{n:'Martin Erlic',p:'DEF'},{n:'Luka Vuskovic',p:'DEF'},
-          {n:'Luka Modric',p:'MID'},{n:'Mateo Kovacic',p:'MID'},{n:'Mario Pasalic',p:'MID'},{n:'Nikola Vlasic',p:'MID'},{n:'Luka Sucic',p:'MID'},{n:'Martin Baturina',p:'MID'},{n:'Kristijan Jakic',p:'MID'},{n:'Petar Sucic',p:'MID'},{n:'Nikola Moro',p:'MID'},{n:'Toni Fruk',p:'MID'},
-          {n:'Ivan Perisic',p:'FWD'},{n:'Andrej Kramaric',p:'FWD'},{n:'Ante Budimir',p:'FWD'},{n:'Marco Pasalic',p:'FWD'},{n:'Petar Musa',p:'FWD'},{n:'Igor Matanovic',p:'FWD'}
-        ]
-      }
-    },
-    {
-      id: 'g4', teamA: 'Portugal', flagA: '🇵🇹', teamB: 'DR Congo', flagB: '🇨🇩',
-      players: {
-        A: [
-          {n:'Diogo Costa',p:'GK'},{n:'Jose Sa',p:'GK'},{n:'Rui Silva',p:'GK'},{n:'Ricardo Velho',p:'GK'},
-          {n:'Diogo Dalot',p:'DEF'},{n:'Matheus Nunes',p:'DEF'},{n:'Nelson Semedo',p:'DEF'},{n:'Joao Cancelo',p:'DEF'},{n:'Nuno Mendes',p:'DEF'},{n:'Goncalo Inacio',p:'DEF'},{n:'Renato Veiga',p:'DEF'},{n:'Ruben Dias',p:'DEF'},{n:'Tomas Araujo',p:'DEF'},
-          {n:'Ruben Neves',p:'MID'},{n:'Samuel Costa',p:'MID'},{n:'Joao Neves',p:'MID'},{n:'Vitinha',p:'MID'},{n:'Bruno Fernandes',p:'MID'},{n:'Bernardo Silva',p:'MID'},
-          {n:'Joao Felix',p:'FWD'},{n:'Francisco Trincao',p:'FWD'},{n:'Francisco Conceicao',p:'FWD'},{n:'Pedro Neto',p:'FWD'},{n:'Rafael Leao',p:'FWD'},{n:'Goncalo Guedes',p:'FWD'},{n:'Goncalo Ramos',p:'FWD'},{n:'Cristiano Ronaldo',p:'FWD'}
-        ],
-        B: [
-          {n:'Matthieu Epolo',p:'GK'},{n:'Timothy Fayulu',p:'GK'},{n:'Lionel Mpasi',p:'GK'},
-          {n:'Dylan Batubinsika',p:'DEF'},{n:'Rocky Bushiri',p:'DEF'},{n:'Gedeon Kalulu',p:'DEF'},{n:'Steve Kapuadi',p:'DEF'},{n:'Joris Kayembe',p:'DEF'},{n:'Arthur Masuaku',p:'DEF'},{n:'Chancel Mbemba',p:'DEF'},{n:'Axel Tuanzebe',p:'DEF'},{n:'Aaron Wan-Bissaka',p:'DEF'},
-          {n:'Theo Bongonda',p:'MID'},{n:'Brian Cipenga',p:'MID'},{n:'Meshack Elia',p:'MID'},{n:'Gael Kakuta',p:'MID'},{n:'Edo Kayembe',p:'MID'},{n:'Nathanael Mbuku',p:'MID'},{n:'Samuel Moutoussamy',p:'MID'},{n:'Ngal ayel Mukau',p:'MID'},{n:'Charles Pickel',p:'MID'},{n:'Noah Sadiki',p:'MID'},
-          {n:'Cedric Bakambu',p:'FWD'},{n:'Simon Banza',p:'FWD'},{n:'Fiston Mayele',p:'FWD'},{n:'Yoane Wissa',p:'FWD'}
-        ]
-      }
-    },
-  ],
+  currentWeek: 4,
+  games: WEEK4_GAMES,
   results: {},
   predictions: [],
 };
  
 function save() { localStorage.setItem('wc26_state', JSON.stringify(STATE)); }
  
-// Force update games and week to latest version — clears old cached games from localStorage
-STATE.currentWeek = 3;
-STATE.games = WEEK3_GAMES;
+// Force update to latest week — clears old cached games from localStorage
+STATE.currentWeek = 4;
+STATE.games = WEEK4_GAMES;
 STATE.results = STATE.results || {};
 STATE.predictions = STATE.predictions || [];
 save();
@@ -935,6 +528,34 @@ const TOURNAMENT_RESULTS = [
   { home: 'Switzerland',   homeG: 4, awayG: 1, away: 'Bosnia & Herzegovina' },
   { home: 'Canada',        homeG: 6, awayG: 0, away: 'Qatar'          },
   { home: 'Mexico',        homeG: 1, awayG: 0, away: 'South Korea'    },
+  // Matchday 3 (June 19–21) — added this update
+  { home: 'Scotland',      homeG: 0, awayG: 1, away: 'Morocco'        },
+  { home: 'Spain',         homeG: 4, awayG: 0, away: 'Saudi Arabia'   },
+  { home: 'Argentina',     homeG: 2, awayG: 0, away: 'Austria'        },
+  { home: 'England',       homeG: 0, awayG: 0, away: 'Ghana'          },
+  // Matchday 3, continued (June 19–25) — added this update
+  { home: 'USA',           homeG: 2, awayG: 0, away: 'Australia'      },
+  { home: 'Brazil',        homeG: 3, awayG: 0, away: 'Haiti'           },
+  { home: 'Turkey',        homeG: 0, awayG: 1, away: 'Paraguay'        },
+  { home: 'Netherlands',   homeG: 5, awayG: 1, away: 'Sweden'          },
+  { home: 'Germany',       homeG: 2, awayG: 1, away: 'Ivory Coast'     },
+  { home: 'Ecuador',       homeG: 0, awayG: 0, away: 'Curaçao'         },
+  { home: 'Tunisia',       homeG: 0, awayG: 4, away: 'Japan'           },
+  { home: 'Belgium',       homeG: 0, awayG: 0, away: 'Iran'            },
+  { home: 'Uruguay',       homeG: 2, awayG: 2, away: 'Cape Verde'      },
+  { home: 'New Zealand',   homeG: 1, awayG: 3, away: 'Egypt'           },
+  { home: 'France',        homeG: 3, awayG: 0, away: 'Iraq'            },
+  { home: 'Norway',        homeG: 3, awayG: 2, away: 'Senegal'         },
+  { home: 'Jordan',        homeG: 1, awayG: 2, away: 'Algeria'         },
+  { home: 'Portugal',      homeG: 5, awayG: 0, away: 'Uzbekistan'      },
+  { home: 'Croatia',       homeG: 1, awayG: 0, away: 'Panama'          },
+  { home: 'Colombia',      homeG: 1, awayG: 0, away: 'DR Congo'        },
+  { home: 'Bosnia & Herzegovina', homeG: 3, awayG: 1, away: 'Qatar'    },
+  { home: 'Switzerland',   homeG: 2, awayG: 1, away: 'Canada'          },
+  { home: 'Morocco',       homeG: 4, awayG: 2, away: 'Haiti'           },
+  { home: 'Scotland',      homeG: 0, awayG: 3, away: 'Brazil'          },
+  { home: 'South Africa',  homeG: 1, awayG: 0, away: 'South Korea'    },
+  { home: 'Czech Republic',homeG: 0, awayG: 3, away: 'Mexico'          },
 ];
  
 function normalise(name) {
@@ -1085,7 +706,73 @@ const RESULTS_BY_DATE = [
     games: [
       { home: 'Mexico', hFlag: '🇲🇽', homeG: 1, awayG: 0, away: 'South Korea', aFlag: '🇰🇷' },
     ]
-  },];
+  },
+  {
+    date: 'Week 3 — 19–22 June',
+    games: [
+      { home: 'Scotland', hFlag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', homeG: 0, awayG: 1, away: 'Morocco', aFlag: '🇲🇦' },
+      { home: 'Spain', hFlag: '🇪🇸', homeG: 4, awayG: 0, away: 'Saudi Arabia', aFlag: '🇸🇦' },
+      { home: 'Argentina', hFlag: '🇦🇷', homeG: 2, awayG: 0, away: 'Austria', aFlag: '🇦🇹' },
+      { home: 'England', hFlag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', homeG: 0, awayG: 0, away: 'Ghana', aFlag: '🇬🇭' },
+    ]
+  },
+  {
+    date: 'Friday 19 June (cont.)',
+    games: [
+      { home: 'USA', hFlag: '🇺🇸', homeG: 2, awayG: 0, away: 'Australia', aFlag: '🇦🇺' },
+      { home: 'Turkey', hFlag: '🇹🇷', homeG: 0, awayG: 1, away: 'Paraguay', aFlag: '🇵🇾' },
+    ]
+  },
+  {
+    date: 'Saturday 20 June',
+    games: [
+      { home: 'Netherlands', hFlag: '🇳🇱', homeG: 5, awayG: 1, away: 'Sweden', aFlag: '🇸🇪' },
+      { home: 'Germany', hFlag: '🇩🇪', homeG: 2, awayG: 1, away: 'Ivory Coast', aFlag: '🇨🇮' },
+      { home: 'Ecuador', hFlag: '🇪🇨', homeG: 0, awayG: 0, away: 'Curaçao', aFlag: '🇨🇼' },
+      { home: 'Tunisia', hFlag: '🇹🇳', homeG: 0, awayG: 4, away: 'Japan', aFlag: '🇯🇵' },
+    ]
+  },
+  {
+    date: 'Sunday 21 June',
+    games: [
+      { home: 'Belgium', hFlag: '🇧🇪', homeG: 0, awayG: 0, away: 'Iran', aFlag: '🇮🇷' },
+      { home: 'Uruguay', hFlag: '🇺🇾', homeG: 2, awayG: 2, away: 'Cape Verde', aFlag: '🇨🇻' },
+      { home: 'New Zealand', hFlag: '🇳🇿', homeG: 1, awayG: 3, away: 'Egypt', aFlag: '🇪🇬' },
+    ]
+  },
+  {
+    date: 'Monday 22 June',
+    games: [
+      { home: 'France', hFlag: '🇫🇷', homeG: 3, awayG: 0, away: 'Iraq', aFlag: '🇮🇶' },
+      { home: 'Norway', hFlag: '🇳🇴', homeG: 3, awayG: 2, away: 'Senegal', aFlag: '🇸🇳' },
+      { home: 'Jordan', hFlag: '🇯🇴', homeG: 1, awayG: 2, away: 'Algeria', aFlag: '🇩🇿' },
+    ]
+  },
+  {
+    date: 'Tuesday 23 June',
+    games: [
+      { home: 'Portugal', hFlag: '🇵🇹', homeG: 5, awayG: 0, away: 'Uzbekistan', aFlag: '🇺🇿' },
+      { home: 'Croatia', hFlag: '🇭🇷', homeG: 1, awayG: 0, away: 'Panama', aFlag: '🇵🇦' },
+      { home: 'Colombia', hFlag: '🇨🇴', homeG: 1, awayG: 0, away: 'DR Congo', aFlag: '🇨🇩' },
+    ]
+  },
+  {
+    date: 'Wednesday 24 June',
+    games: [
+      { home: 'Bosnia & Herzegovina', hFlag: '🇧🇦', homeG: 3, awayG: 1, away: 'Qatar', aFlag: '🇶🇦' },
+      { home: 'Switzerland', hFlag: '🇨🇭', homeG: 2, awayG: 1, away: 'Canada', aFlag: '🇨🇦' },
+      { home: 'Morocco', hFlag: '🇲🇦', homeG: 4, awayG: 2, away: 'Haiti', aFlag: '🇭🇹' },
+      { home: 'Scotland', hFlag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', homeG: 0, awayG: 3, away: 'Brazil', aFlag: '🇧🇷' },
+    ]
+  },
+  {
+    date: 'Thursday 25 June',
+    games: [
+      { home: 'South Africa', hFlag: '🇿🇦', homeG: 1, awayG: 0, away: 'South Korea', aFlag: '🇰🇷' },
+      { home: 'Czech Republic', hFlag: '🇨🇿', homeG: 0, awayG: 3, away: 'Mexico', aFlag: '🇲🇽' },
+    ]
+  },
+];
  
 function getSweepstakeOwner(teamName) {
   const key = normalise(teamName);
@@ -1162,7 +849,13 @@ function updatePredictorSelect() {
  
 function renderPredictForm() {
   updatePredictorSelect();
+  const badge = document.getElementById('weekBadge');
+  if (badge) badge.textContent = `⚽ WEEK ${STATE.currentWeek} — PREDICTIONS OPEN`;
   const container = document.getElementById('gamesContainer');
+  if (!STATE.games.length) {
+    container.innerHTML = '<div class="empty-state"><div class="emoji">⏳</div><p>Week ' + STATE.currentWeek + ' games haven\'t been set yet — check back soon!</p></div>';
+    return;
+  }
   container.innerHTML = STATE.games.map((g) => `
     <div class="game-card">
       <div class="game-header">
@@ -1353,14 +1046,41 @@ const WEEK2_SCORES = [
   { name: 'Josh K',   pts: 8  },
 ];
  
+// Week 3 results: 🏴 Scotland 0-1 Morocco (Saibari) · 🇪🇸 Spain 4-0 Saudi Arabia (Yamal, Oyarzabal x2, Al Tambakti OG)
+// 🇦🇷 Argentina 2-0 Austria (Messi) · 🏴 England 0-0 Ghana (no scorers)
+// Points calculated from formspree submissions vs actual results above.
+// Note: Tim submitted predictions twice for Week 3 — his EARLIEST submission was used pending confirmation
+// of whether the later one was a genuine resubmission or accidental duplicate.
+const WEEK3_SCORES = [
+  { name: 'Aime',    pts: 14 },
+  { name: 'Raman',   pts: 14 },
+  { name: 'Nathan',  pts: 14 },
+  { name: 'Tim',     pts: 11 },
+  { name: 'Olly',    pts: 9  },
+  { name: 'Elliot',  pts: 9  },
+  { name: 'Joanna',  pts: 9  },
+  { name: 'Luke J',  pts: 9  },
+  { name: 'Jono',    pts: 9  },
+  { name: 'Tori',    pts: 9  },
+  { name: 'Ash',     pts: 9  },
+  { name: 'Phil',    pts: 9  },
+  { name: 'Willliam', pts: 9 },
+  { name: 'Holly',   pts: 6  },
+  { name: 'Katie',   pts: 6  },
+  { name: 'Luke A',  pts: 6  },
+  { name: 'Karima',  pts: 6  },
+  { name: 'Josh K',  pts: 6  },
+];
+ 
 // Name aliases — same person, inconsistent spelling across weekly exports
 const NAME_ALIASES = { 'William': 'Willliam' };
 function canonicalName(name) { return NAME_ALIASES[name] || name; }
  
-// All weeks, in order — add WEEK3_SCORES etc. here as new weeks are scored
+// All weeks, in order — add WEEK4_SCORES etc. here as new weeks are scored
 const ALL_WEEKS = [
   { label: 'Week 1', scores: WEEK1_SCORES },
   { label: 'Week 2', scores: WEEK2_SCORES },
+  { label: 'Week 3', scores: WEEK3_SCORES },
 ];
  
 function getAccumulatedScores() {
@@ -1553,3 +1273,4 @@ updatePredictorSelect();
  
  
 </body></html>
+ 

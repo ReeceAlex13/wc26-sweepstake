@@ -99,6 +99,7 @@
   <span class="nav-logo">⚽ WC26</span>
   <button class="nav-btn active" onclick="showPage('teams',this)">🏅 Teams</button>
   <button class="nav-btn" onclick="showPage('predict',this)">📝 Predict</button>
+  <button class="nav-btn" onclick="showPage('taco',this)">🌮 Full English Taco</button>
   <button class="nav-btn" onclick="showPage('leaderboard',this)">🏆 Sweepstake</button>
   <button class="nav-btn" onclick="showPage('predictions',this)">🎯 Predictions</button>
   <button class="nav-btn" onclick="showPage('admin',this)">⚙️ Admin</button>
@@ -118,16 +119,6 @@
 <div class="page" id="predictPage">
   <div style="padding:8px 0 28px">
 
-    <!-- BANNER -->
-    <div style="background:linear-gradient(135deg,#1a0a2e,#0d1a0d);border:1px solid rgba(255,215,0,0.2);border-radius:16px;padding:24px;margin-bottom:24px;">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-        <span style="background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;">The Full English</span>
-        <span style="font-size:13px;color:rgba(232,232,240,0.6);">Bonus Round · Week 5 · July 1</span>
-      </div>
-      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs DR Congo 🇨🇩</div>
-      <div style="font-size:13px;color:var(--muted);margin-top:4px;">213 pts up for grabs — swing for it</div>
-    </div>
-
     <!-- NAME PICKER -->
     <div class="name-entry">
       <div>
@@ -136,173 +127,173 @@
       </div>
     </div>
 
-    <!-- Q1 Match result — 10 pts -->
+    <div id="weeklyGamesContainer"></div>
+
+    <div class="submit-section">
+      <button class="btn-gold" onclick="submitWeeklyPredictions()" style="font-size:16px;padding:14px 40px;">Submit Predictions ✓</button>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="tacoPage">
+  <div style="padding:8px 0 28px">
+
+    <div style="background:linear-gradient(135deg,#1a0a2e,#0d1a0d);border:1px solid rgba(255,215,0,0.2);border-radius:16px;padding:24px;margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <span style="background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;">Bonus Round</span>
+      </div>
+      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs Mexico 🇲🇽</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px;">189 pts up for grabs — extra picks just for this one</div>
+    </div>
+
+    <div class="name-entry">
+      <div>
+        <label style="font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;display:block;">Your name</label>
+        <select id="tacoPredictorSelect" class="form-input" style="max-width:240px;"></select>
+      </div>
+    </div>
+
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div><div class="q-label">Q1</div><div style="font-size:15px;font-weight:600;">Match result</div></div>
         <div class="pts-badge">10 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_result','England Win',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England Win</button>
-        <button class="outcome-btn" onclick="selectFE('fe_result','Draw',this)">Draw</button>
-        <button class="outcome-btn" onclick="selectFE('fe_result','DR Congo Win',this)">🇨🇩 DR Congo Win</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_result','England Win',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England Win</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_result','Draw',this)">Draw</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_result','Mexico Win',this)">🇲🇽 Mexico Win</button>
       </div>
     </div>
 
-    <!-- Q2 How decided — 30 pts -->
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div><div class="q-label">Q2</div><div style="font-size:15px;font-weight:600;">How will the match be decided?</div></div>
         <div class="pts-badge">30 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_decided','90 mins',this)">90 mins</button>
-        <button class="outcome-btn" onclick="selectFE('fe_decided','Extra time',this)">Extra time</button>
-        <button class="outcome-btn" onclick="selectFE('fe_decided','Penalties',this)">Penalties</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_decided','90 mins',this)">90 mins</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_decided','Extra time',this)">Extra time</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_decided','Penalties',this)">Penalties</button>
       </div>
     </div>
 
-    <!-- Q3 Who scores first — 15 pts -->
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q3</div><div style="font-size:15px;font-weight:600;">Who scores first — England or DR Congo?</div></div>
+        <div><div class="q-label">Q3</div><div style="font-size:15px;font-weight:600;">Who scores first — England or Mexico?</div></div>
         <div class="pts-badge">15 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_first_team','England',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</button>
-        <button class="outcome-btn" onclick="selectFE('fe_first_team','DR Congo',this)">🇨🇩 DR Congo</button>
-        <button class="outcome-btn" onclick="selectFE('fe_first_team','No goal',this)">No goal</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_first_team','England',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_first_team','Mexico',this)">🇲🇽 Mexico</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_first_team','No goal',this)">No goal</button>
       </div>
     </div>
 
-    <!-- Q4 Total goals — 15 pts -->
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div><div class="q-label">Q4</div><div style="font-size:15px;font-weight:600;">Total goals in the match</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Both teams — including extra time if played</div></div>
         <div class="pts-badge">15 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_total_goals','0-1',this)">0–1</button>
-        <button class="outcome-btn" onclick="selectFE('fe_total_goals','2',this)">2</button>
-        <button class="outcome-btn" onclick="selectFE('fe_total_goals','3',this)">3</button>
-        <button class="outcome-btn" onclick="selectFE('fe_total_goals','4',this)">4</button>
-        <button class="outcome-btn" onclick="selectFE('fe_total_goals','5+',this)">5+</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_total_goals','0-1',this)">0–1</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_total_goals','2',this)">2</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_total_goals','3',this)">3</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_total_goals','4',this)">4</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_total_goals','5+',this)">5+</button>
       </div>
     </div>
 
-    <!-- Q5 England clean sheet — 12 pts -->
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div><div class="q-label">Q5</div><div style="font-size:15px;font-weight:600;">Will England keep a clean sheet?</div></div>
         <div class="pts-badge">12 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_clean_sheet','Yes',this)">Yes</button>
-        <button class="outcome-btn" onclick="selectFE('fe_clean_sheet','No',this)">No</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_clean_sheet','Yes',this)">Yes</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_clean_sheet','No',this)">No</button>
       </div>
     </div>
 
-    <!-- Q6 England brace scorer — 24 pts -->
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q6</div><div style="font-size:15px;font-weight:600;">England player to score a brace (2+ goals)</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">If they score 2 or more, you get the points</div></div>
-        <div class="pts-badge">24 pts</div>
-      </div>
-      <select id="fe_brace">
-        <option value="">— Pick an England player —</option>
-        <option>Harry Kane</option><option>Bukayo Saka</option><option>Jude Bellingham</option>
-        <option>Phil Foden</option><option>Ollie Watkins</option><option>Marcus Rashford</option>
-        <option>Anthony Gordon</option><option>Eberechi Eze</option><option>Ivan Toney</option><option>Noni Madueke</option>
-      </select>
-    </div>
-
-    <!-- Q7 Red card — 12 pts -->
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q7</div><div style="font-size:15px;font-weight:600;">Will there be a red card?</div></div>
+        <div><div class="q-label">Q6</div><div style="font-size:15px;font-weight:600;">Will there be a red card?</div></div>
         <div class="pts-badge">12 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_redcard','Yes',this)">Yes</button>
-        <button class="outcome-btn" onclick="selectFE('fe_redcard','No',this)">No</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_redcard','Yes',this)">Yes</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_redcard','No',this)">No</button>
       </div>
     </div>
 
-    <!-- Q8 Goal in first 15 — 15 pts -->
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q8</div><div style="font-size:15px;font-weight:600;">Will there be a goal in the first 15 mins?</div></div>
+        <div><div class="q-label">Q7</div><div style="font-size:15px;font-weight:600;">Will there be a goal in the first 15 mins?</div></div>
         <div class="pts-badge">15 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_early_goal','Yes',this)">Yes</button>
-        <button class="outcome-btn" onclick="selectFE('fe_early_goal','No',this)">No</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_early_goal','Yes',this)">Yes</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_early_goal','No',this)">No</button>
       </div>
     </div>
 
-    <!-- Q9 Penalty — 15 pts -->
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q9</div><div style="font-size:15px;font-weight:600;">Will there be a penalty?</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Awarded during 90 mins or extra time</div></div>
+        <div><div class="q-label">Q8</div><div style="font-size:15px;font-weight:600;">Will there be a penalty?</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Awarded during 90 mins or extra time</div></div>
         <div class="pts-badge">15 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_penalty','Yes',this)">Yes</button>
-        <button class="outcome-btn" onclick="selectFE('fe_penalty','No',this)">No</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_penalty','Yes',this)">Yes</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_penalty','No',this)">No</button>
       </div>
     </div>
 
-    <!-- Q10 Result at half time — 30 pts -->
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q10</div><div style="font-size:15px;font-weight:600;">Result at half time</div></div>
+        <div><div class="q-label">Q9</div><div style="font-size:15px;font-weight:600;">Result at half time</div></div>
         <div class="pts-badge">30 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_ht_result','England',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</button>
-        <button class="outcome-btn" onclick="selectFE('fe_ht_result','Draw',this)">Draw</button>
-        <button class="outcome-btn" onclick="selectFE('fe_ht_result','DR Congo',this)">🇨🇩 DR Congo</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_ht_result','England',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_ht_result','Draw',this)">Draw</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_ht_result','Mexico',this)">🇲🇽 Mexico</button>
       </div>
     </div>
 
-    <!-- Q11 Yellow cards — 15 pts -->
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q11</div><div style="font-size:15px;font-weight:600;">How many yellow cards in total?</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Both teams combined</div></div>
+        <div><div class="q-label">Q10</div><div style="font-size:15px;font-weight:600;">How many yellow cards in total?</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Both teams combined</div></div>
         <div class="pts-badge">15 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_yellows','0-1',this)">0–1</button>
-        <button class="outcome-btn" onclick="selectFE('fe_yellows','2-3',this)">2–3</button>
-        <button class="outcome-btn" onclick="selectFE('fe_yellows','4-5',this)">4–5</button>
-        <button class="outcome-btn" onclick="selectFE('fe_yellows','6+',this)">6+</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_yellows','0-1',this)">0–1</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_yellows','2-3',this)">2–3</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_yellows','4-5',this)">4–5</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_yellows','6+',this)">6+</button>
       </div>
     </div>
 
-    <!-- Q12 Total corners wildcard — 20 pts -->
     <div class="game-card" style="border-color:rgba(0,165,80,0.3);">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label" style="color:var(--green);">Q12 · Wildcard</div><div style="font-size:15px;font-weight:600;">How many total corners?</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Both teams combined</div></div>
+        <div><div class="q-label" style="color:var(--green);">Q11 · Wildcard</div><div style="font-size:15px;font-weight:600;">How many total corners?</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Both teams combined</div></div>
         <div class="pts-badge">20 pts</div>
       </div>
       <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectFE('fe_corners','0-2',this)">0–2</button>
-        <button class="outcome-btn" onclick="selectFE('fe_corners','3-5',this)">3–5</button>
-        <button class="outcome-btn" onclick="selectFE('fe_corners','6-8',this)">6–8</button>
-        <button class="outcome-btn" onclick="selectFE('fe_corners','9-11',this)">9–11</button>
-        <button class="outcome-btn" onclick="selectFE('fe_corners','12-14',this)">12–14</button>
-        <button class="outcome-btn" onclick="selectFE('fe_corners','15+',this)">15+</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_corners','0-2',this)">0–2</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_corners','3-5',this)">3–5</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_corners','6-8',this)">6–8</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_corners','9-11',this)">9–11</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_corners','12-14',this)">12–14</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_corners','15+',this)">15+</button>
       </div>
     </div>
 
-    <!-- Points summary -->
     <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-      <span style="font-size:13px;color:var(--muted);">12 questions</span>
-      <span style="font-family:'Bebas Neue';font-size:22px;color:var(--gold);">213 pts max</span>
+      <span style="font-size:13px;color:var(--muted);">11 questions</span>
+      <span style="font-family:'Bebas Neue';font-size:22px;color:var(--gold);">189 pts max</span>
     </div>
 
     <div class="submit-section">
-      <button class="btn-gold" onclick="submitFullEnglish()" style="font-size:16px;padding:14px 40px;">Submit The Full English ✓</button>
+      <button class="btn-gold" onclick="submitTaco()" style="font-size:16px;padding:14px 40px;">Submit Full English Taco ✓</button>
     </div>
   </div>
 </div>
@@ -432,7 +423,8 @@ function showPage(page,btn){
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById(page+'Page').classList.add('active');btn.classList.add('active');
 
-  if(page==='predict')updatePredictorSelect();
+  if(page==='predict'){updatePredictorSelect();renderWeeklyGames();}
+  if(page==='taco')updatePredictorSelect();
   if(page==='leaderboard'){renderLeaderboard();renderTeamStats();}
   if(page==='predictions')renderPredictionsLeaderboard();
   if(page==='admin')renderAdmin();
@@ -447,36 +439,112 @@ function renderTeams(){
   document.getElementById('teamsGrid').innerHTML=sorted.map(p=>{const out=isEliminated(p.team);return `<div class="sw-card ${out?'eliminated':''}"><div class="sw-person">${p.name}${out?'<span class="eliminated-badge">OUT</span>':''}</div><div class="sw-team"><span class="sw-flag" style="${out?'opacity:0.5':''}">${p.flag}</span><span style="${out?'text-decoration:line-through;opacity:0.6':''}">${p.team}</span></div></div>`;}).join('');
 }
 function updatePredictorSelect(){
-  const sel=document.getElementById('predictorSelect');if(!sel)return;
-  sel.innerHTML='<option value="">— Select your name —</option>'+DRAW_RESULTS.map(p=>`<option value="${p.name}">${p.name}</option>`).join('');
+  const opts='<option value="">— Select your name —</option>'+DRAW_RESULTS.map(p=>`<option value="${p.name}">${p.name}</option>`).join('');
+  ['predictorSelect','tacoPredictorSelect'].forEach(id=>{const sel=document.getElementById(id);if(sel)sel.innerHTML=opts;});
 }
-const feAnswers={};
-function selectFE(key,val,btn){feAnswers[key]=val;btn.closest('.outcome-btns').querySelectorAll('.outcome-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');}
-function submitFullEnglish(){
+
+/* ===== Weekly predictions (this week's fixtures) ===== */
+const WEEKLY_FORM_URL='https://formspree.io/f/mbdvpkeq';
+const WEEKLY_GAMES=[
+  {home:'Australia',away:'Egypt'},
+  {home:'Argentina',away:'Cape Verde'},
+  {home:'Canada',away:'Morocco'},
+  {home:'Paraguay',away:'France'},
+  {home:'Brazil',away:'Norway'},
+];
+const weeklyAnswers={};
+function selectWeekly(key,val,btn){weeklyAnswers[key]=val;btn.closest('.outcome-btns').querySelectorAll('.outcome-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');}
+function renderWeeklyGames(){
+  const container=document.getElementById('weeklyGamesContainer');
+  if(!container)return;
+  container.innerHTML=WEEKLY_GAMES.map((g,i)=>{
+    const n=i+1;
+    return `<div class="game-card">
+      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:.04em;text-align:center;margin-bottom:18px;color:var(--text);">${g.home} <span style="color:var(--gold);font-size:15px;">vs</span> ${g.away}</div>
+
+      <div style="margin-bottom:16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+          <div class="q-label" style="font-size:12px;">Match winner</div>
+          <div class="pts-badge">12 pts</div>
+        </div>
+        <div class="outcome-btns">
+          <button class="outcome-btn" onclick="selectWeekly('winner_${n}','${g.home}',this)">${g.home}</button>
+          <button class="outcome-btn" onclick="selectWeekly('winner_${n}','Draw',this)">Draw</button>
+          <button class="outcome-btn" onclick="selectWeekly('winner_${n}','${g.away}',this)">${g.away}</button>
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+          <div class="q-label" style="font-size:12px;">Half time result</div>
+          <div class="pts-badge">25 pts</div>
+        </div>
+        <div class="outcome-btns">
+          <button class="outcome-btn" onclick="selectWeekly('ht_${n}','${g.home} ahead',this)">${g.home} ahead</button>
+          <button class="outcome-btn" onclick="selectWeekly('ht_${n}','Level',this)">Level</button>
+          <button class="outcome-btn" onclick="selectWeekly('ht_${n}','${g.away} ahead',this)">${g.away} ahead</button>
+        </div>
+      </div>
+
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+          <div class="q-label" style="font-size:12px;">How it's decided</div>
+          <div class="pts-badge">15 pts</div>
+        </div>
+        <div class="outcome-btns">
+          <button class="outcome-btn" onclick="selectWeekly('decided_${n}','90 mins',this)">90 mins</button>
+          <button class="outcome-btn" onclick="selectWeekly('decided_${n}','Extra time',this)">Extra time</button>
+          <button class="outcome-btn" onclick="selectWeekly('decided_${n}','Penalties',this)">Penalties</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+function submitWeeklyPredictions(){
   const name=document.getElementById('predictorSelect').value;
   if(!name)return showToast('Please select your name first');
-  const required=['fe_result','fe_decided','fe_first_team','fe_total_goals','fe_clean_sheet','fe_redcard','fe_early_goal','fe_penalty','fe_ht_result','fe_yellows','fe_corners'];
-  const labels={fe_result:'Match result',fe_decided:'How decided',fe_first_team:'Who scores first',fe_total_goals:'Total goals',fe_clean_sheet:'England clean sheet',fe_redcard:'Red card',fe_early_goal:'Goal in first 15',fe_penalty:'Penalty',fe_ht_result:'Result at half time',fe_yellows:'Yellow cards',fe_corners:'Total corners'};
-  for(const k of required){if(!feAnswers[k])return showToast('Please answer: '+labels[k]);}
-  const formData={
-    Name:name,Week:'Week 5 — The Full English',
-    'Q1 Match result (10pts)':feAnswers['fe_result']||'',
-    'Q2 How decided (30pts)':feAnswers['fe_decided']||'',
-    'Q3 Who scores first (15pts)':feAnswers['fe_first_team']||'',
-    'Q4 Total goals (15pts)':feAnswers['fe_total_goals']||'',
-    'Q5 England clean sheet (12pts)':feAnswers['fe_clean_sheet']||'',
-    'Q6 England brace scorer (24pts)':document.getElementById('fe_brace').value||'None',
-    'Q7 Red card (12pts)':feAnswers['fe_redcard']||'',
-    'Q8 Goal in first 15 mins (15pts)':feAnswers['fe_early_goal']||'',
-    'Q9 Penalty (15pts)':feAnswers['fe_penalty']||'',
-    'Q10 Result at half time (30pts)':feAnswers['fe_ht_result']||'',
-    'Q11 Yellow cards (15pts)':feAnswers['fe_yellows']||'',
-    'Q12 Total corners (20pts)':feAnswers['fe_corners']||'',
-  };
-  const btn=document.querySelector('.submit-section .btn-gold');
+  const formData={Name:name};
+  let missing=false;
+  WEEKLY_GAMES.forEach((g,i)=>{
+    const n=i+1;
+    const winner=weeklyAnswers[`winner_${n}`],ht=weeklyAnswers[`ht_${n}`],decided=weeklyAnswers[`decided_${n}`];
+    if(!winner||!ht||!decided)missing=true;
+    formData[`${g.home} vs ${g.away} — Winner (12pts)`]=winner||'';
+    formData[`${g.home} vs ${g.away} — Half time (25pts)`]=ht||'';
+    formData[`${g.home} vs ${g.away} — Decided by (15pts)`]=decided||'';
+  });
+  if(missing)return showToast('Please answer every question for every game');
+  const btn=document.querySelector('#predictPage .submit-section .btn-gold');
   btn.textContent='Submitting…';btn.disabled=true;
-  fetch('https://formspree.io/f/xojongag',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(formData)})
-  .then(r=>r.json()).then(data=>{if(data.ok){showToast('✅ The Full English submitted!');btn.textContent='✅ Submitted!';}else{showToast('❌ Something went wrong — try again');btn.textContent='Submit The Full English ✓';btn.disabled=false;}}).catch(()=>{showToast('❌ Network error — try again');btn.textContent='Submit The Full English ✓';btn.disabled=false;});
+  fetch(WEEKLY_FORM_URL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(formData)})
+  .then(r=>r.json()).then(data=>{if(data.ok){showToast('✅ Predictions submitted!');btn.textContent='✅ Submitted!';}else{showToast('❌ Something went wrong — try again');btn.textContent='Submit Predictions ✓';btn.disabled=false;}}).catch(()=>{showToast('❌ Network error — try again');btn.textContent='Submit Predictions ✓';btn.disabled=false;});
+}
+const tacoAnswers={};
+function selectTaco(key,val,btn){tacoAnswers[key]=val;btn.closest('.outcome-btns').querySelectorAll('.outcome-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');}
+function submitTaco(){
+  const name=document.getElementById('tacoPredictorSelect').value;
+  if(!name)return showToast('Please select your name first');
+  const required=['taco_result','taco_decided','taco_first_team','taco_total_goals','taco_clean_sheet','taco_redcard','taco_early_goal','taco_penalty','taco_ht_result','taco_yellows','taco_corners'];
+  const labels={taco_result:'Match result',taco_decided:'How decided',taco_first_team:'Who scores first',taco_total_goals:'Total goals',taco_clean_sheet:'England clean sheet',taco_redcard:'Red card',taco_early_goal:'Goal in first 15',taco_penalty:'Penalty',taco_ht_result:'Result at half time',taco_yellows:'Yellow cards',taco_corners:'Total corners'};
+  for(const k of required){if(!tacoAnswers[k])return showToast('Please answer: '+labels[k]);}
+  const formData={
+    Name:name,Fixture:'The Full English Taco — England vs Mexico',
+    'Q1 Match result (10pts)':tacoAnswers['taco_result']||'',
+    'Q2 How decided (30pts)':tacoAnswers['taco_decided']||'',
+    'Q3 Who scores first (15pts)':tacoAnswers['taco_first_team']||'',
+    'Q4 Total goals (15pts)':tacoAnswers['taco_total_goals']||'',
+    'Q5 England clean sheet (12pts)':tacoAnswers['taco_clean_sheet']||'',
+    'Q6 Red card (12pts)':tacoAnswers['taco_redcard']||'',
+    'Q7 Goal in first 15 mins (15pts)':tacoAnswers['taco_early_goal']||'',
+    'Q8 Penalty (15pts)':tacoAnswers['taco_penalty']||'',
+    'Q9 Result at half time (30pts)':tacoAnswers['taco_ht_result']||'',
+    'Q10 Yellow cards (15pts)':tacoAnswers['taco_yellows']||'',
+    'Q11 Total corners (20pts)':tacoAnswers['taco_corners']||'',
+  };
+  const btn=document.querySelector('#tacoPage .submit-section .btn-gold');
+  btn.textContent='Submitting…';btn.disabled=true;
+  fetch(WEEKLY_FORM_URL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(formData)})
+  .then(r=>r.json()).then(data=>{if(data.ok){showToast('✅ Full English Taco submitted!');btn.textContent='✅ Submitted!';}else{showToast('❌ Something went wrong — try again');btn.textContent='Submit Full English Taco ✓';btn.disabled=false;}}).catch(()=>{showToast('❌ Network error — try again');btn.textContent='Submit Full English Taco ✓';btn.disabled=false;});
 }
 function calcPoints(pred,results){let pts=0;STATE.games.forEach(g=>{const r=results[g.id],p=pred[g.id];if(!r||!p)return;if(p.outcome===r.outcome)pts+=3;if(p.scoreA===r.scoreA&&p.scoreB===r.scoreB)pts+=10;if(p.scorer&&r.scorers&&r.scorers.includes(p.scorer))pts+=5;});return pts;}
 function renderLeaderboard(){
@@ -528,6 +596,6 @@ function setupNewWeek(){
   STATE.currentWeek=week;STATE.games=games;STATE.results={};save();showToast(`✅ Week ${week} set up!`);renderAdmin();
 }
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
-renderTeams();updatePredictorSelect();
+renderTeams();updatePredictorSelect();renderWeeklyGames();
 </script>
 </body></html>

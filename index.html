@@ -99,7 +99,7 @@
   <span class="nav-logo">⚽ WC26</span>
   <button class="nav-btn active" onclick="showPage('teams',this)">🏅 Teams</button>
   <button class="nav-btn" onclick="showPage('predict',this)">📝 Predict</button>
-  <button class="nav-btn" onclick="showPage('taco',this)">🌮 Full English Taco</button>
+  <button class="nav-btn" onclick="showPage('taco',this)">🐟 Fjord &amp; Chips Clash</button>
   <button class="nav-btn" onclick="showPage('leaderboard',this)">🏆 Sweepstake</button>
   <button class="nav-btn" onclick="showPage('predictions',this)">🎯 Predictions</button>
   <button class="nav-btn" onclick="showPage('admin',this)">⚙️ Admin</button>
@@ -142,7 +142,8 @@
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
         <span style="background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;">Bonus Round</span>
       </div>
-      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs Mexico 🇲🇽</div>
+      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🐟 The Fjord &amp; Chips Clash</div>
+      <div style="font-size:14px;color:var(--text);margin-top:2px;">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs Norway 🇳🇴</div>
       <div style="font-size:13px;color:var(--muted);margin-top:4px;">189 pts up for grabs — extra picks just for this one</div>
     </div>
 
@@ -161,7 +162,7 @@
       <div class="outcome-btns">
         <button class="outcome-btn" onclick="selectTaco('taco_result','England Win',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England Win</button>
         <button class="outcome-btn" onclick="selectTaco('taco_result','Draw',this)">Draw</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_result','Mexico Win',this)">🇲🇽 Mexico Win</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_result','Norway Win',this)">🇳🇴 Norway Win</button>
       </div>
     </div>
 
@@ -179,12 +180,12 @@
 
     <div class="game-card">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q3</div><div style="font-size:15px;font-weight:600;">Who scores first — England or Mexico?</div></div>
+        <div><div class="q-label">Q3</div><div style="font-size:15px;font-weight:600;">Who scores first — England or Norway?</div></div>
         <div class="pts-badge">15 pts</div>
       </div>
       <div class="outcome-btns">
         <button class="outcome-btn" onclick="selectTaco('taco_first_team','England',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_first_team','Mexico',this)">🇲🇽 Mexico</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_first_team','Norway',this)">🇳🇴 Norway</button>
         <button class="outcome-btn" onclick="selectTaco('taco_first_team','No goal',this)">No goal</button>
       </div>
     </div>
@@ -255,7 +256,7 @@
       <div class="outcome-btns">
         <button class="outcome-btn" onclick="selectTaco('taco_ht_result','England',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</button>
         <button class="outcome-btn" onclick="selectTaco('taco_ht_result','Draw',this)">Draw</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_ht_result','Mexico',this)">🇲🇽 Mexico</button>
+        <button class="outcome-btn" onclick="selectTaco('taco_ht_result','Norway',this)">🇳🇴 Norway</button>
       </div>
     </div>
 
@@ -444,13 +445,10 @@ function updatePredictorSelect(){
 }
 
 /* ===== Weekly predictions (this week's fixtures) ===== */
-const WEEKLY_FORM_URL='https://formspree.io/f/mbdvpkeq';
+const WEEKLY_FORM_URL='https://formspree.io/f/xjgqdwga';
 const WEEKLY_GAMES=[
-  {home:'Australia',away:'Egypt'},
-  {home:'Argentina',away:'Cape Verde'},
-  {home:'Canada',away:'Morocco'},
-  {home:'Paraguay',away:'France'},
-  {home:'Brazil',away:'Norway'},
+  {home:'France',away:'Morocco'},
+  {home:'Spain',away:'Belgium'},
 ];
 const weeklyAnswers={};
 function selectWeekly(key,val,btn){weeklyAnswers[key]=val;btn.closest('.outcome-btns').querySelectorAll('.outcome-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');}
@@ -528,7 +526,7 @@ function submitTaco(){
   const labels={taco_result:'Match result',taco_decided:'How decided',taco_first_team:'Who scores first',taco_total_goals:'Total goals',taco_clean_sheet:'England clean sheet',taco_redcard:'Red card',taco_early_goal:'Goal in first 15',taco_penalty:'Penalty',taco_ht_result:'Result at half time',taco_yellows:'Yellow cards',taco_corners:'Total corners'};
   for(const k of required){if(!tacoAnswers[k])return showToast('Please answer: '+labels[k]);}
   const formData={
-    Name:name,Fixture:'The Full English Taco — England vs Mexico',
+    Name:name,Fixture:'The Fjord & Chips Clash — England vs Norway',
     'Q1 Match result (10pts)':tacoAnswers['taco_result']||'',
     'Q2 How decided (30pts)':tacoAnswers['taco_decided']||'',
     'Q3 Who scores first (15pts)':tacoAnswers['taco_first_team']||'',

@@ -28,6 +28,7 @@
   .sw-team:last-child{border-bottom:none;}
   .sw-flag{font-size:26px;}
   .eliminated-badge{display:inline-block;background:rgba(230,57,70,0.15);color:var(--red);border:1px solid rgba(230,57,70,0.3);border-radius:4px;font-size:10px;font-weight:700;padding:2px 6px;letter-spacing:.06em;margin-left:6px;}
+  .stage-badge{display:inline-block;background:rgba(0,165,80,0.15);color:var(--green);border:1px solid rgba(0,165,80,0.3);border-radius:4px;font-size:10px;font-weight:700;padding:2px 6px;letter-spacing:.04em;margin-left:6px;white-space:nowrap;}
   .game-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:14px;}
   .outcome-btns{display:flex;gap:8px;flex-wrap:wrap;}
   .outcome-btn{flex:1;min-width:80px;padding:10px 8px;background:var(--panel);border:2px solid var(--border);border-radius:8px;color:var(--muted);font-family:'DM Sans';font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;}
@@ -304,7 +305,7 @@
     <div class="section-title">📊 HOW YOUR TEAM IS DOING</div>
     <div class="stats-table-wrap">
       <table class="stats-table" id="teamStatsTable">
-        <thead><tr><th>#</th><th>Person</th><th>Team</th><th>MP</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Status</th></tr></thead>
+        <thead><tr><th>#</th><th>Person</th><th>Team</th><th>Stage reached</th><th>MP</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Status</th></tr></thead>
         <tbody id="teamStatsBody"></tbody>
       </table>
     </div>
@@ -361,10 +362,42 @@ const DRAW_RESULTS=[
   {name:'Sam',team:'Senegal',flag:'🇸🇳'},{name:'Lucas',team:'Spain',flag:'🇪🇸'},
   {name:'Josh F',team:'Czech Republic',flag:'🇨🇿'},{name:'Reece',team:'USA',flag:'🇺🇸'},
 ];
-const ELIMINATED_TEAMS=new Set(['south korea','czech republic','qatar','scotland','haiti','turkey','curaçao','tunisia','iran','new zealand','uruguay','saudi arabia','iraq','jordan','uzbekistan','panama','south africa','japan','germany','netherlands','serbia','denmark']);
-function isEliminated(t){return ELIMINATED_TEAMS.has(t.toLowerCase().trim());}
+/* ===== World Cup 2026 status, updated 8 July 2026 (after the Round of 16) =====
+   STAGE_REACHED tells you the furthest point each team has reached.
+   isStillIn = true means the team is still alive in the tournament right now.
+   Everyone else gets a strikethrough + "OUT" badge. */
+const STAGE_REACHED={
+  'netherlands':{stage:'Round of 32',isStillIn:false},
+  'south korea':{stage:'Group Stage',isStillIn:false},
+  'argentina':{stage:'Quarter-Finals',isStillIn:true},
+  'turkey':{stage:'Group Stage',isStillIn:false},
+  'germany':{stage:'Round of 32',isStillIn:false},
+  'morocco':{stage:'Quarter-Finals',isStillIn:true},
+  'mexico':{stage:'Round of 16',isStillIn:false},
+  'canada':{stage:'Round of 16',isStillIn:false},
+  'england':{stage:'Quarter-Finals',isStillIn:true},
+  'colombia':{stage:'Round of 16',isStillIn:false},
+  'belgium':{stage:'Quarter-Finals',isStillIn:true},
+  'portugal':{stage:'Round of 16',isStillIn:false},
+  'croatia':{stage:'Round of 32',isStillIn:false},
+  'france':{stage:'Quarter-Finals',isStillIn:true},
+  'australia':{stage:'Round of 32',isStillIn:false},
+  'uruguay':{stage:'Group Stage',isStillIn:false},
+  'japan':{stage:'Round of 32',isStillIn:false},
+  'switzerland':{stage:'Quarter-Finals',isStillIn:true},
+  'ecuador':{stage:'Round of 32',isStillIn:false},
+  'brazil':{stage:'Round of 16',isStillIn:false},
+  'serbia':{stage:'Did not qualify',isStillIn:false},
+  'denmark':{stage:'Did not qualify',isStillIn:false},
+  'senegal':{stage:'Round of 32',isStillIn:false},
+  'spain':{stage:'Quarter-Finals',isStillIn:true},
+  'czech republic':{stage:'Group Stage',isStillIn:false},
+  'usa':{stage:'Round of 16',isStillIn:false},
+};
 const TEAM_ALIASES={'czechia':'czech republic','united states':'usa'};
 function normalise(n){const k=n.toLowerCase().trim();return TEAM_ALIASES[k]||k;}
+function getStage(teamName){return STAGE_REACHED[normalise(teamName)]||{stage:'Unknown',isStillIn:true};}
+function isEliminated(t){return !getStage(t).isStillIn;}
 let STATE=JSON.parse(localStorage.getItem('wc26_state')||'null')||{currentWeek:5,games:[],results:{},predictions:[]};
 STATE.currentWeek=5;STATE.games=[];STATE.results=STATE.results||{};STATE.predictions=STATE.predictions||[];
 function save(){localStorage.setItem('wc26_state',JSON.stringify(STATE));}
@@ -404,19 +437,37 @@ const TOURNAMENT_RESULTS=[
   {home:'Spain',homeG:1,awayG:0,away:'Uruguay'},{home:'Belgium',homeG:5,awayG:1,away:'New Zealand'},
   {home:'Canada',homeG:1,awayG:0,away:'South Africa'},{home:'Brazil',homeG:2,awayG:1,away:'Japan'},
   {home:'Netherlands',homeG:1,awayG:1,away:'Morocco'},
+  /* ===== Round of 32 (Jun 28 – Jul 3) ===== */
+  {home:'Germany',homeG:1,awayG:1,away:'Paraguay'},{home:'Ivory Coast',homeG:1,awayG:2,away:'Norway'},
+  {home:'France',homeG:3,awayG:0,away:'Sweden'},{home:'Mexico',homeG:2,awayG:0,away:'Ecuador'},
+  {home:'England',homeG:2,awayG:1,away:'DR Congo'},{home:'Belgium',homeG:3,awayG:2,away:'Senegal'},
+  {home:'USA',homeG:2,awayG:0,away:'Bosnia & Herzegovina'},{home:'Spain',homeG:3,awayG:0,away:'Austria'},
+  {home:'Portugal',homeG:2,awayG:1,away:'Croatia'},{home:'Switzerland',homeG:2,awayG:0,away:'Algeria'},
+  {home:'Australia',homeG:1,awayG:1,away:'Egypt'},{home:'Argentina',homeG:3,awayG:2,away:'Cape Verde'},
+  {home:'Colombia',homeG:1,awayG:0,away:'Ghana'},
+  /* ===== Round of 16 (Jul 4 – Jul 7) ===== */
+  {home:'Canada',homeG:0,awayG:3,away:'Morocco'},{home:'Paraguay',homeG:0,awayG:1,away:'France'},
+  {home:'Brazil',homeG:1,awayG:2,away:'Norway'},{home:'Mexico',homeG:2,awayG:3,away:'England'},
+  {home:'Portugal',homeG:0,awayG:1,away:'Spain'},{home:'USA',homeG:1,awayG:4,away:'Belgium'},
+  {home:'Argentina',homeG:3,awayG:2,away:'Egypt'},{home:'Switzerland',homeG:0,awayG:0,away:'Colombia'},
 ];
+/* MP/W/D/L/GF/GA above now cover the group stage plus every Round of 32 and Round of 16
+   knockout match (last updated 8 July 2026, after the Round of 16 finished). Penalty
+   shootout winners are marked correctly in the "Stage reached" column, but the score
+   used for W/D/L here is the actual 90-min/extra-time score, so shootout matches count
+   as a draw for both sides — same convention the sheet was already using. */
 function getTeamStats(teamName){
   const key=normalise(teamName);let mp=0,w=0,d=0,l=0,gf=0,ga=0;
   TOURNAMENT_RESULTS.forEach(r=>{const h=normalise(r.home),a=normalise(r.away);if(h===key){mp++;gf+=r.homeG;ga+=r.awayG;if(r.homeG>r.awayG)w++;else if(r.homeG===r.awayG)d++;else l++;}else if(a===key){mp++;gf+=r.awayG;ga+=r.homeG;if(r.awayG>r.homeG)w++;else if(r.awayG===r.homeG)d++;else l++;}});
   return{mp,w,d,l,gf,ga,gd:gf-ga};
 }
 function renderTeamStats(){
-  const rows=DRAW_RESULTS.map(p=>({...p,...getTeamStats(p.team)}));
-  const active=rows.filter(r=>!isEliminated(r.team)).sort((a,b)=>b.gd-a.gd||b.gf-a.gf);
-  const elim=rows.filter(r=>isEliminated(r.team)).sort((a,b)=>b.gd-a.gd||b.gf-a.gf);
+  const rows=DRAW_RESULTS.map(p=>({...p,...getTeamStats(p.team),...getStage(p.team)}));
+  const active=rows.filter(r=>r.isStillIn).sort((a,b)=>b.gd-a.gd||b.gf-a.gf);
+  const elim=rows.filter(r=>!r.isStillIn).sort((a,b)=>b.gd-a.gd||b.gf-a.gf);
   document.getElementById('teamStatsBody').innerHTML=[...active,...elim].map((r,i)=>{
-    const out=isEliminated(r.team);const gdClass=r.gd>0?'td-gd-pos':r.gd<0?'td-gd-neg':'td-gd-neu';const gdStr=r.gd>0?'+'+r.gd:r.gd;
-    return `<tr class="${out?'elim-row':''}"><td>${i+1}</td><td>${out?`<span class="strikethrough">${r.name}</span>`:r.name}</td><td><span class="td-flag" style="${out?'opacity:0.5':''}">${r.flag}</span><span style="${out?'text-decoration:line-through;opacity:0.5':''}">${r.team}</span></td><td>${r.mp}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td><td>${r.gf}</td><td>${r.ga}</td><td class="${gdClass}">${r.mp>0?gdStr:'—'}</td><td style="text-align:left;"><span style="color:${out?'var(--red)':'var(--green)'};font-size:11px;font-weight:700;">${out?'❌ OUT':'✅ IN'}</span></td></tr>`;
+    const out=!r.isStillIn;const gdClass=r.gd>0?'td-gd-pos':r.gd<0?'td-gd-neg':'td-gd-neu';const gdStr=r.gd>0?'+'+r.gd:r.gd;
+    return `<tr class="${out?'elim-row':''}"><td>${i+1}</td><td>${out?`<span class="strikethrough">${r.name}</span>`:r.name}</td><td><span class="td-flag" style="${out?'opacity:0.5':''}">${r.flag}</span><span style="${out?'text-decoration:line-through;opacity:0.5':''}">${r.team}</span></td><td style="text-align:left;font-size:12px;color:${out?'var(--muted)':'var(--text)'};">${r.stage}</td><td>${r.mp}</td><td>${r.w}</td><td>${r.d}</td><td>${r.l}</td><td>${r.gf}</td><td>${r.ga}</td><td class="${gdClass}">${r.mp>0?gdStr:'—'}</td><td style="text-align:left;"><span style="color:${out?'var(--red)':'var(--green)'};font-size:11px;font-weight:700;">${out?'❌ OUT':'✅ IN'}</span></td></tr>`;
   }).join('');
 }
 function showPage(page,btn){
@@ -434,10 +485,11 @@ function showPage(page,btn){
 
 
 function renderTeams(){
-  const active=DRAW_RESULTS.filter(p=>!isEliminated(p.team));
-  const elim=DRAW_RESULTS.filter(p=>isEliminated(p.team));
+  const rows=DRAW_RESULTS.map(p=>({...p,...getStage(p.team)}));
+  const active=rows.filter(p=>p.isStillIn);
+  const elim=rows.filter(p=>!p.isStillIn);
   const sorted=[...active,...elim];
-  document.getElementById('teamsGrid').innerHTML=sorted.map(p=>{const out=isEliminated(p.team);return `<div class="sw-card ${out?'eliminated':''}"><div class="sw-person">${p.name}${out?'<span class="eliminated-badge">OUT</span>':''}</div><div class="sw-team"><span class="sw-flag" style="${out?'opacity:0.5':''}">${p.flag}</span><span style="${out?'text-decoration:line-through;opacity:0.6':''}">${p.team}</span></div></div>`;}).join('');
+  document.getElementById('teamsGrid').innerHTML=sorted.map(p=>{const out=!p.isStillIn;return `<div class="sw-card ${out?'eliminated':''}"><div class="sw-person">${out?`<span class="strikethrough">${p.name}</span>`:p.name}${out?'<span class="eliminated-badge">OUT</span>':`<span class="stage-badge">${p.stage}</span>`}</div><div class="sw-team"><span class="sw-flag" style="${out?'opacity:0.5':''}">${p.flag}</span><span style="${out?'text-decoration:line-through;opacity:0.6':''}">${p.team}</span></div>${out?`<div style="font-size:11px;color:var(--muted);margin-top:6px;">Out in the ${p.stage}</div>`:''}</div>`;}).join('');
 }
 function updatePredictorSelect(){
   const opts='<option value="">— Select your name —</option>'+DRAW_RESULTS.map(p=>`<option value="${p.name}">${p.name}</option>`).join('');

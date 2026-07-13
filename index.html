@@ -100,7 +100,7 @@
   <span class="nav-logo">⚽ WC26</span>
   <button class="nav-btn active" onclick="showPage('teams',this)">🏅 Teams</button>
   <button class="nav-btn" onclick="showPage('predict',this)">📝 Predict</button>
-  <button class="nav-btn" onclick="showPage('taco',this)">🐟 Fjord &amp; Chips Clash</button>
+  <button class="nav-btn" onclick="showPage('taco',this)">🫖 Crumpets &amp; Chimichurri</button>
   <button class="nav-btn" onclick="showPage('leaderboard',this)">🏆 Sweepstake</button>
   <button class="nav-btn" onclick="showPage('predictions',this)">🎯 Predictions</button>
   <button class="nav-btn" onclick="showPage('admin',this)">⚙️ Admin</button>
@@ -120,6 +120,15 @@
 <div class="page" id="predictPage">
   <div style="padding:8px 0 28px">
 
+    <div style="background:linear-gradient(135deg,#1a0a2e,#0d1a0d);border:1px solid rgba(255,215,0,0.2);border-radius:16px;padding:24px;margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <span style="background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;">Semi-Final</span>
+      </div>
+      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🥐 The Croissant &amp; Churro Clash</div>
+      <div style="font-size:14px;color:var(--text);margin-top:2px;">🇫🇷 France vs Spain 🇪🇸</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px;">189 pts up for grabs — 11 questions, same format as last week</div>
+    </div>
+
     <!-- NAME PICKER -->
     <div class="name-entry">
       <div>
@@ -131,7 +140,7 @@
     <div id="weeklyGamesContainer"></div>
 
     <div class="submit-section">
-      <button class="btn-gold" onclick="submitWeeklyPredictions()" style="font-size:16px;padding:14px 40px;">Submit Predictions ✓</button>
+      <button class="btn-gold" onclick="submitBonusRound('predict')" style="font-size:16px;padding:14px 40px;">Submit Croissant &amp; Churro Picks ✓</button>
     </div>
   </div>
 </div>
@@ -141,11 +150,11 @@
 
     <div style="background:linear-gradient(135deg,#1a0a2e,#0d1a0d);border:1px solid rgba(255,215,0,0.2);border-radius:16px;padding:24px;margin-bottom:24px;">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-        <span style="background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;">Bonus Round</span>
+        <span style="background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;">Semi-Final</span>
       </div>
-      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🐟 The Fjord &amp; Chips Clash</div>
-      <div style="font-size:14px;color:var(--text);margin-top:2px;">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs Norway 🇳🇴</div>
-      <div style="font-size:13px;color:var(--muted);margin-top:4px;">189 pts up for grabs — extra picks just for this one</div>
+      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🫖 The Crumpets &amp; Chimichurri Clash</div>
+      <div style="font-size:14px;color:var(--text);margin-top:2px;">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs Argentina 🇦🇷</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px;">189 pts up for grabs — 11 questions, same format as last week</div>
     </div>
 
     <div class="name-entry">
@@ -155,153 +164,18 @@
       </div>
     </div>
 
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q1</div><div style="font-size:15px;font-weight:600;">Match result</div></div>
-        <div class="pts-badge">10 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_result','England Win',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England Win</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_result','Draw',this)">Draw</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_result','Norway Win',this)">🇳🇴 Norway Win</button>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q2</div><div style="font-size:15px;font-weight:600;">How will the match be decided?</div></div>
-        <div class="pts-badge">30 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_decided','90 mins',this)">90 mins</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_decided','Extra time',this)">Extra time</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_decided','Penalties',this)">Penalties</button>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q3</div><div style="font-size:15px;font-weight:600;">Who scores first — England or Norway?</div></div>
-        <div class="pts-badge">15 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_first_team','England',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_first_team','Norway',this)">🇳🇴 Norway</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_first_team','No goal',this)">No goal</button>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q4</div><div style="font-size:15px;font-weight:600;">Total goals in the match</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Both teams — including extra time if played</div></div>
-        <div class="pts-badge">15 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_total_goals','0-1',this)">0–1</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_total_goals','2',this)">2</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_total_goals','3',this)">3</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_total_goals','4',this)">4</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_total_goals','5+',this)">5+</button>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q5</div><div style="font-size:15px;font-weight:600;">Will England keep a clean sheet?</div></div>
-        <div class="pts-badge">12 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_clean_sheet','Yes',this)">Yes</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_clean_sheet','No',this)">No</button>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q6</div><div style="font-size:15px;font-weight:600;">Will there be a red card?</div></div>
-        <div class="pts-badge">12 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_redcard','Yes',this)">Yes</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_redcard','No',this)">No</button>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q7</div><div style="font-size:15px;font-weight:600;">Will there be a goal in the first 15 mins?</div></div>
-        <div class="pts-badge">15 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_early_goal','Yes',this)">Yes</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_early_goal','No',this)">No</button>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q8</div><div style="font-size:15px;font-weight:600;">Will there be a penalty?</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Awarded during 90 mins or extra time</div></div>
-        <div class="pts-badge">15 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_penalty','Yes',this)">Yes</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_penalty','No',this)">No</button>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q9</div><div style="font-size:15px;font-weight:600;">Result at half time</div></div>
-        <div class="pts-badge">30 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_ht_result','England',this)">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_ht_result','Draw',this)">Draw</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_ht_result','Norway',this)">🇳🇴 Norway</button>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label">Q10</div><div style="font-size:15px;font-weight:600;">How many yellow cards in total?</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Both teams combined</div></div>
-        <div class="pts-badge">15 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_yellows','0-1',this)">0–1</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_yellows','2-3',this)">2–3</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_yellows','4-5',this)">4–5</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_yellows','6+',this)">6+</button>
-      </div>
-    </div>
-
-    <div class="game-card" style="border-color:rgba(0,165,80,0.3);">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-        <div><div class="q-label" style="color:var(--green);">Q11 · Wildcard</div><div style="font-size:15px;font-weight:600;">How many total corners?</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">Both teams combined</div></div>
-        <div class="pts-badge">20 pts</div>
-      </div>
-      <div class="outcome-btns">
-        <button class="outcome-btn" onclick="selectTaco('taco_corners','0-2',this)">0–2</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_corners','3-5',this)">3–5</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_corners','6-8',this)">6–8</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_corners','9-11',this)">9–11</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_corners','12-14',this)">12–14</button>
-        <button class="outcome-btn" onclick="selectTaco('taco_corners','15+',this)">15+</button>
-      </div>
-    </div>
-
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-      <span style="font-size:13px;color:var(--muted);">11 questions</span>
-      <span style="font-family:'Bebas Neue';font-size:22px;color:var(--gold);">189 pts max</span>
-    </div>
+    <div id="tacoGamesContainer"></div>
 
     <div class="submit-section">
-      <button class="btn-gold" onclick="submitTaco()" style="font-size:16px;padding:14px 40px;">Submit Full English Taco ✓</button>
+      <button class="btn-gold" onclick="submitBonusRound('taco')" style="font-size:16px;padding:14px 40px;">Submit Crumpets &amp; Chimichurri Picks ✓</button>
     </div>
   </div>
 </div>
 
 <div class="page" id="leaderboardPage">
   <div style="padding:8px 0 28px">
+    <div class="section-title">🔥 THE FINAL FOUR</div>
+    <div id="finalFourGrid" class="teams-grid" style="margin-bottom:36px;"></div>
     <div class="section-title">📊 HOW YOUR TEAM IS DOING</div>
     <div class="stats-table-wrap">
       <table class="stats-table" id="teamStatsTable">
@@ -362,38 +236,48 @@ const DRAW_RESULTS=[
   {name:'Sam',team:'Senegal',flag:'🇸🇳'},{name:'Lucas',team:'Spain',flag:'🇪🇸'},
   {name:'Josh F',team:'Czech Republic',flag:'🇨🇿'},{name:'Reece',team:'USA',flag:'🇺🇸'},
 ];
-/* ===== World Cup 2026 status, updated 8 July 2026 (after the Round of 16) =====
+/* ===== World Cup 2026 status, updated 13 July 2026 (after the Quarter-Finals) =====
    STAGE_REACHED tells you the furthest point each team has reached.
    isStillIn = true means the team is still alive in the tournament right now.
-   Everyone else gets a strikethrough + "OUT" badge. */
+   Everyone else gets a strikethrough + "OUT" badge.
+   Only 4 teams left standing: France, Spain, England, Argentina — the Semi-Finals. */
 const STAGE_REACHED={
   'netherlands':{stage:'Round of 32',isStillIn:false},
   'south korea':{stage:'Group Stage',isStillIn:false},
-  'argentina':{stage:'Quarter-Finals',isStillIn:true},
+  'argentina':{stage:'Semi-Finals',isStillIn:true},
   'turkey':{stage:'Group Stage',isStillIn:false},
   'germany':{stage:'Round of 32',isStillIn:false},
-  'morocco':{stage:'Quarter-Finals',isStillIn:true},
+  'morocco':{stage:'Quarter-Finals',isStillIn:false},
   'mexico':{stage:'Round of 16',isStillIn:false},
   'canada':{stage:'Round of 16',isStillIn:false},
-  'england':{stage:'Quarter-Finals',isStillIn:true},
+  'england':{stage:'Semi-Finals',isStillIn:true},
   'colombia':{stage:'Round of 16',isStillIn:false},
-  'belgium':{stage:'Quarter-Finals',isStillIn:true},
+  'belgium':{stage:'Quarter-Finals',isStillIn:false},
   'portugal':{stage:'Round of 16',isStillIn:false},
   'croatia':{stage:'Round of 32',isStillIn:false},
-  'france':{stage:'Quarter-Finals',isStillIn:true},
+  'france':{stage:'Semi-Finals',isStillIn:true},
   'australia':{stage:'Round of 32',isStillIn:false},
   'uruguay':{stage:'Group Stage',isStillIn:false},
   'japan':{stage:'Round of 32',isStillIn:false},
-  'switzerland':{stage:'Quarter-Finals',isStillIn:true},
+  'switzerland':{stage:'Quarter-Finals',isStillIn:false},
   'ecuador':{stage:'Round of 32',isStillIn:false},
   'brazil':{stage:'Round of 16',isStillIn:false},
   'serbia':{stage:'Did not qualify',isStillIn:false},
   'denmark':{stage:'Did not qualify',isStillIn:false},
   'senegal':{stage:'Round of 32',isStillIn:false},
-  'spain':{stage:'Quarter-Finals',isStillIn:true},
+  'spain':{stage:'Semi-Finals',isStillIn:true},
   'czech republic':{stage:'Group Stage',isStillIn:false},
   'usa':{stage:'Round of 16',isStillIn:false},
 };
+
+/* ===== Final 4 — updated 13 July 2026, odds from bet365 via oddspedia =====
+   Used to show "who's left, and who owns them" on the Sweepstake tab. */
+const FINAL_FOUR=[
+  {team:'France',flag:'🇫🇷',odds:'11/8',blurb:'Favourites. Beat Morocco 2-0, haven\'t conceded in the knockouts.'},
+  {team:'Spain',flag:'🇪🇸',odds:'10/3',blurb:'Beat Belgium 2-1 with a Merino winner in the 88th minute — again.'},
+  {team:'England',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',odds:'10/3',blurb:'Needed extra time to see off Norway 2-1, Bellingham x2.'},
+  {team:'Argentina',flag:'🇦🇷',odds:'9/2',blurb:'Beat 10-man Switzerland 3-1 in extra time to defend their crown.'},
+];
 const TEAM_ALIASES={'czechia':'czech republic','united states':'usa'};
 function normalise(n){const k=n.toLowerCase().trim();return TEAM_ALIASES[k]||k;}
 function getStage(teamName){return STAGE_REACHED[normalise(teamName)]||{stage:'Unknown',isStillIn:true};}
@@ -450,16 +334,34 @@ const TOURNAMENT_RESULTS=[
   {home:'Brazil',homeG:1,awayG:2,away:'Norway'},{home:'Mexico',homeG:2,awayG:3,away:'England'},
   {home:'Portugal',homeG:0,awayG:1,away:'Spain'},{home:'USA',homeG:1,awayG:4,away:'Belgium'},
   {home:'Argentina',homeG:3,awayG:2,away:'Egypt'},{home:'Switzerland',homeG:0,awayG:0,away:'Colombia'},
+  /* ===== Quarter-Finals (Jul 9 – Jul 11) ===== */
+  {home:'France',homeG:2,awayG:0,away:'Morocco'},{home:'Spain',homeG:2,awayG:1,away:'Belgium'},
+  {home:'Norway',homeG:1,awayG:2,away:'England'},{home:'Argentina',homeG:3,awayG:1,away:'Switzerland'},
 ];
-/* MP/W/D/L/GF/GA above now cover the group stage plus every Round of 32 and Round of 16
-   knockout match (last updated 8 July 2026, after the Round of 16 finished). Penalty
-   shootout winners are marked correctly in the "Stage reached" column, but the score
-   used for W/D/L here is the actual 90-min/extra-time score, so shootout matches count
-   as a draw for both sides — same convention the sheet was already using. */
+/* MP/W/D/L/GF/GA above now cover the group stage plus every knockout match up to and
+   including the Quarter-Finals (last updated 13 July 2026). Penalty shootout winners
+   are marked correctly in the "Stage reached" column, but the score used for W/D/L here
+   is the actual 90-min/extra-time score, so shootout matches count as a draw for both
+   sides — same convention the sheet was already using. */
 function getTeamStats(teamName){
   const key=normalise(teamName);let mp=0,w=0,d=0,l=0,gf=0,ga=0;
   TOURNAMENT_RESULTS.forEach(r=>{const h=normalise(r.home),a=normalise(r.away);if(h===key){mp++;gf+=r.homeG;ga+=r.awayG;if(r.homeG>r.awayG)w++;else if(r.homeG===r.awayG)d++;else l++;}else if(a===key){mp++;gf+=r.awayG;ga+=r.homeG;if(r.awayG>r.homeG)w++;else if(r.awayG===r.homeG)d++;else l++;}});
   return{mp,w,d,l,gf,ga,gd:gf-ga};
+}
+function renderFinalFour(){
+  const grid=document.getElementById('finalFourGrid');
+  if(!grid)return;
+  grid.innerHTML=FINAL_FOUR.map(f=>{
+    const owner=DRAW_RESULTS.find(p=>normalise(p.team)===normalise(f.team));
+    return `<div class="sw-card" style="border-color:rgba(255,215,0,0.25);">
+      <div class="sw-person" style="display:flex;align-items:center;justify-content:space-between;">
+        <span>${f.flag} ${f.team}</span>
+        <span style="background:rgba(255,215,0,0.15);color:var(--gold);border:1px solid rgba(255,215,0,0.3);border-radius:6px;font-size:13px;font-weight:700;padding:3px 10px;">${f.odds}</span>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:10px;">${f.blurb}</div>
+      ${owner?`<div class="sw-team" style="border-bottom:none;padding-top:6px;"><span style="font-size:12px;color:var(--text);">🎟️ Drawn by <strong>${owner.name}</strong></span></div>`:''}
+    </div>`;
+  }).join('');
 }
 function renderTeamStats(){
   const rows=DRAW_RESULTS.map(p=>({...p,...getTeamStats(p.team),...getStage(p.team)}));
@@ -475,9 +377,9 @@ function showPage(page,btn){
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById(page+'Page').classList.add('active');btn.classList.add('active');
 
-  if(page==='predict'){updatePredictorSelect();renderWeeklyGames();}
-  if(page==='taco')updatePredictorSelect();
-  if(page==='leaderboard'){renderLeaderboard();renderTeamStats();}
+  if(page==='predict'){updatePredictorSelect();renderBonusRound('predict');}
+  if(page==='taco'){updatePredictorSelect();renderBonusRound('taco');}
+  if(page==='leaderboard'){renderLeaderboard();renderTeamStats();renderFinalFour();}
   if(page==='predictions')renderPredictionsLeaderboard();
   if(page==='admin')renderAdmin();
 }
@@ -496,105 +398,107 @@ function updatePredictorSelect(){
   ['predictorSelect','tacoPredictorSelect'].forEach(id=>{const sel=document.getElementById(id);if(sel)sel.innerHTML=opts;});
 }
 
-/* ===== Weekly predictions (this week's fixtures) ===== */
+/* =====================================================================
+   BONUS ROUND SYSTEM
+   Both prediction tabs now use the SAME 11 questions (same shape as the
+   old "Fjord & Chips Clash"), just pointed at whichever two teams are
+   playing that week. To set up a new week, just edit BONUS_ROUNDS below
+   — change teamA/teamB/name/subtitle/fixtureLabel — everything else
+   (rendering, points, submitting) works automatically.
+   ===================================================================== */
 const WEEKLY_FORM_URL='https://formspree.io/f/xjgqdwga';
-const WEEKLY_GAMES=[
-  {home:'France',away:'Morocco'},
-  {home:'Spain',away:'Belgium'},
-];
-const weeklyAnswers={};
-function selectWeekly(key,val,btn){weeklyAnswers[key]=val;btn.closest('.outcome-btns').querySelectorAll('.outcome-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');}
-function renderWeeklyGames(){
-  const container=document.getElementById('weeklyGamesContainer');
+
+const BONUS_ROUNDS={
+  predict:{
+    name:'The Croissant & Churro Clash',
+    fixtureLabel:'The Croissant & Churro Clash — France vs Spain',
+    teamA:{name:'France',flag:'🇫🇷'},
+    teamB:{name:'Spain',flag:'🇪🇸'},
+    selectId:'predictorSelect',
+    containerId:'weeklyGamesContainer',
+    submitBtnSelector:'#predictPage .submit-section .btn-gold',
+    submitLabel:'Submit Croissant & Churro Picks ✓',
+  },
+  taco:{
+    name:'The Crumpets & Chimichurri Clash',
+    fixtureLabel:'The Crumpets & Chimichurri Clash — England vs Argentina',
+    teamA:{name:'England',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+    teamB:{name:'Argentina',flag:'🇦🇷'},
+    selectId:'tacoPredictorSelect',
+    containerId:'tacoGamesContainer',
+    submitBtnSelector:'#tacoPage .submit-section .btn-gold',
+    submitLabel:'Submit Crumpets & Chimichurri Picks ✓',
+  },
+};
+
+/* Builds the 11 questions for whichever two teams are handed in. */
+function buildBonusQuestions(teamA,teamB){
+  return[
+    {id:'result',label:'Match result',pts:10,options:[
+      {v:teamA.name+' Win',t:teamA.flag+' '+teamA.name+' Win'},{v:'Draw',t:'Draw'},{v:teamB.name+' Win',t:teamB.flag+' '+teamB.name+' Win'}]},
+    {id:'decided',label:'How will the match be decided?',pts:30,options:[
+      {v:'90 mins',t:'90 mins'},{v:'Extra time',t:'Extra time'},{v:'Penalties',t:'Penalties'}]},
+    {id:'first_team',label:`Who scores first — ${teamA.name} or ${teamB.name}?`,pts:15,options:[
+      {v:teamA.name,t:teamA.flag+' '+teamA.name},{v:teamB.name,t:teamB.flag+' '+teamB.name},{v:'No goal',t:'No goal'}]},
+    {id:'total_goals',label:'Total goals in the match',sub:'Both teams — including extra time if played',pts:15,options:[
+      {v:'0-1',t:'0–1'},{v:'2',t:'2'},{v:'3',t:'3'},{v:'4',t:'4'},{v:'5+',t:'5+'}]},
+    {id:'clean_sheet',label:`Will ${teamA.name} keep a clean sheet?`,pts:12,options:[
+      {v:'Yes',t:'Yes'},{v:'No',t:'No'}]},
+    {id:'redcard',label:'Will there be a red card?',pts:12,options:[
+      {v:'Yes',t:'Yes'},{v:'No',t:'No'}]},
+    {id:'early_goal',label:'Will there be a goal in the first 15 mins?',pts:15,options:[
+      {v:'Yes',t:'Yes'},{v:'No',t:'No'}]},
+    {id:'penalty',label:'Will there be a penalty?',sub:'Awarded during 90 mins or extra time',pts:15,options:[
+      {v:'Yes',t:'Yes'},{v:'No',t:'No'}]},
+    {id:'ht_result',label:'Result at half time',pts:30,options:[
+      {v:teamA.name,t:teamA.flag+' '+teamA.name},{v:'Draw',t:'Draw'},{v:teamB.name,t:teamB.flag+' '+teamB.name}]},
+    {id:'yellows',label:'How many yellow cards in total?',sub:'Both teams combined',pts:15,options:[
+      {v:'0-1',t:'0–1'},{v:'2-3',t:'2–3'},{v:'4-5',t:'4–5'},{v:'6+',t:'6+'}]},
+    {id:'corners',label:'How many total corners?',sub:'Both teams combined',pts:20,wildcard:true,options:[
+      {v:'0-2',t:'0–2'},{v:'3-5',t:'3–5'},{v:'6-8',t:'6–8'},{v:'9-11',t:'9–11'},{v:'12-14',t:'12–14'},{v:'15+',t:'15+'}]},
+  ];
+}
+
+const bonusAnswers={predict:{},taco:{}};
+function selectBonus(roundKey,qid,val,btn){
+  bonusAnswers[roundKey][qid]=val;
+  btn.closest('.outcome-btns').querySelectorAll('.outcome-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+function renderBonusRound(roundKey){
+  const cfg=BONUS_ROUNDS[roundKey];
+  const container=document.getElementById(cfg.containerId);
   if(!container)return;
-  container.innerHTML=WEEKLY_GAMES.map((g,i)=>{
+  const questions=buildBonusQuestions(cfg.teamA,cfg.teamB);
+  const totalPts=questions.reduce((sum,q)=>sum+q.pts,0);
+  container.innerHTML=questions.map((q,i)=>{
     const n=i+1;
-    return `<div class="game-card">
-      <div style="font-family:'Bebas Neue';font-size:24px;letter-spacing:.04em;text-align:center;margin-bottom:18px;color:var(--text);">${g.home} <span style="color:var(--gold);font-size:15px;">vs</span> ${g.away}</div>
-
-      <div style="margin-bottom:16px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-          <div class="q-label" style="font-size:12px;">Match winner</div>
-          <div class="pts-badge">12 pts</div>
-        </div>
-        <div class="outcome-btns">
-          <button class="outcome-btn" onclick="selectWeekly('winner_${n}','${g.home}',this)">${g.home}</button>
-          <button class="outcome-btn" onclick="selectWeekly('winner_${n}','Draw',this)">Draw</button>
-          <button class="outcome-btn" onclick="selectWeekly('winner_${n}','${g.away}',this)">${g.away}</button>
-        </div>
+    return `<div class="game-card" style="${q.wildcard?'border-color:rgba(0,165,80,0.3);':''}">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+        <div><div class="q-label" style="${q.wildcard?'color:var(--green);':''}">Q${n}${q.wildcard?' · Wildcard':''}</div><div style="font-size:15px;font-weight:600;">${q.label}</div>${q.sub?`<div style="font-size:12px;color:var(--muted);margin-top:2px;">${q.sub}</div>`:''}</div>
+        <div class="pts-badge">${q.pts} pts</div>
       </div>
-
-      <div style="margin-bottom:16px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-          <div class="q-label" style="font-size:12px;">Half time result</div>
-          <div class="pts-badge">25 pts</div>
-        </div>
-        <div class="outcome-btns">
-          <button class="outcome-btn" onclick="selectWeekly('ht_${n}','${g.home} ahead',this)">${g.home} ahead</button>
-          <button class="outcome-btn" onclick="selectWeekly('ht_${n}','Level',this)">Level</button>
-          <button class="outcome-btn" onclick="selectWeekly('ht_${n}','${g.away} ahead',this)">${g.away} ahead</button>
-        </div>
-      </div>
-
-      <div>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-          <div class="q-label" style="font-size:12px;">How it's decided</div>
-          <div class="pts-badge">15 pts</div>
-        </div>
-        <div class="outcome-btns">
-          <button class="outcome-btn" onclick="selectWeekly('decided_${n}','90 mins',this)">90 mins</button>
-          <button class="outcome-btn" onclick="selectWeekly('decided_${n}','Extra time',this)">Extra time</button>
-          <button class="outcome-btn" onclick="selectWeekly('decided_${n}','Penalties',this)">Penalties</button>
-        </div>
+      <div class="outcome-btns">
+        ${q.options.map(o=>`<button class="outcome-btn" onclick="selectBonus('${roundKey}','${q.id}','${o.v}',this)">${o.t}</button>`).join('')}
       </div>
     </div>`;
-  }).join('');
+  }).join('')+`<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="font-size:13px;color:var(--muted);">${questions.length} questions</span><span style="font-family:'Bebas Neue';font-size:22px;color:var(--gold);">${totalPts} pts max</span></div>`;
 }
-function submitWeeklyPredictions(){
-  const name=document.getElementById('predictorSelect').value;
+
+function submitBonusRound(roundKey){
+  const cfg=BONUS_ROUNDS[roundKey];
+  const name=document.getElementById(cfg.selectId).value;
   if(!name)return showToast('Please select your name first');
-  const formData={Name:name};
-  let missing=false;
-  WEEKLY_GAMES.forEach((g,i)=>{
-    const n=i+1;
-    const winner=weeklyAnswers[`winner_${n}`],ht=weeklyAnswers[`ht_${n}`],decided=weeklyAnswers[`decided_${n}`];
-    if(!winner||!ht||!decided)missing=true;
-    formData[`${g.home} vs ${g.away} — Winner (12pts)`]=winner||'';
-    formData[`${g.home} vs ${g.away} — Half time (25pts)`]=ht||'';
-    formData[`${g.home} vs ${g.away} — Decided by (15pts)`]=decided||'';
-  });
-  if(missing)return showToast('Please answer every question for every game');
-  const btn=document.querySelector('#predictPage .submit-section .btn-gold');
+  const questions=buildBonusQuestions(cfg.teamA,cfg.teamB);
+  const answers=bonusAnswers[roundKey];
+  for(const q of questions){if(!answers[q.id])return showToast('Please answer: '+q.label);}
+  const formData={Name:name,Fixture:cfg.fixtureLabel};
+  questions.forEach((q,i)=>{formData[`Q${i+1} ${q.label} (${q.pts}pts)`]=answers[q.id]||'';});
+  const btn=document.querySelector(cfg.submitBtnSelector);
   btn.textContent='Submitting…';btn.disabled=true;
   fetch(WEEKLY_FORM_URL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(formData)})
-  .then(r=>r.json()).then(data=>{if(data.ok){showToast('✅ Predictions submitted!');btn.textContent='✅ Submitted!';}else{showToast('❌ Something went wrong — try again');btn.textContent='Submit Predictions ✓';btn.disabled=false;}}).catch(()=>{showToast('❌ Network error — try again');btn.textContent='Submit Predictions ✓';btn.disabled=false;});
-}
-const tacoAnswers={};
-function selectTaco(key,val,btn){tacoAnswers[key]=val;btn.closest('.outcome-btns').querySelectorAll('.outcome-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');}
-function submitTaco(){
-  const name=document.getElementById('tacoPredictorSelect').value;
-  if(!name)return showToast('Please select your name first');
-  const required=['taco_result','taco_decided','taco_first_team','taco_total_goals','taco_clean_sheet','taco_redcard','taco_early_goal','taco_penalty','taco_ht_result','taco_yellows','taco_corners'];
-  const labels={taco_result:'Match result',taco_decided:'How decided',taco_first_team:'Who scores first',taco_total_goals:'Total goals',taco_clean_sheet:'England clean sheet',taco_redcard:'Red card',taco_early_goal:'Goal in first 15',taco_penalty:'Penalty',taco_ht_result:'Result at half time',taco_yellows:'Yellow cards',taco_corners:'Total corners'};
-  for(const k of required){if(!tacoAnswers[k])return showToast('Please answer: '+labels[k]);}
-  const formData={
-    Name:name,Fixture:'The Fjord & Chips Clash — England vs Norway',
-    'Q1 Match result (10pts)':tacoAnswers['taco_result']||'',
-    'Q2 How decided (30pts)':tacoAnswers['taco_decided']||'',
-    'Q3 Who scores first (15pts)':tacoAnswers['taco_first_team']||'',
-    'Q4 Total goals (15pts)':tacoAnswers['taco_total_goals']||'',
-    'Q5 England clean sheet (12pts)':tacoAnswers['taco_clean_sheet']||'',
-    'Q6 Red card (12pts)':tacoAnswers['taco_redcard']||'',
-    'Q7 Goal in first 15 mins (15pts)':tacoAnswers['taco_early_goal']||'',
-    'Q8 Penalty (15pts)':tacoAnswers['taco_penalty']||'',
-    'Q9 Result at half time (30pts)':tacoAnswers['taco_ht_result']||'',
-    'Q10 Yellow cards (15pts)':tacoAnswers['taco_yellows']||'',
-    'Q11 Total corners (20pts)':tacoAnswers['taco_corners']||'',
-  };
-  const btn=document.querySelector('#tacoPage .submit-section .btn-gold');
-  btn.textContent='Submitting…';btn.disabled=true;
-  fetch(WEEKLY_FORM_URL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(formData)})
-  .then(r=>r.json()).then(data=>{if(data.ok){showToast('✅ Full English Taco submitted!');btn.textContent='✅ Submitted!';}else{showToast('❌ Something went wrong — try again');btn.textContent='Submit Full English Taco ✓';btn.disabled=false;}}).catch(()=>{showToast('❌ Network error — try again');btn.textContent='Submit Full English Taco ✓';btn.disabled=false;});
+  .then(r=>r.json()).then(data=>{if(data.ok){showToast('✅ Predictions submitted!');btn.textContent='✅ Submitted!';}else{showToast('❌ Something went wrong — try again');btn.textContent=cfg.submitLabel;btn.disabled=false;}}).catch(()=>{showToast('❌ Network error — try again');btn.textContent=cfg.submitLabel;btn.disabled=false;});
 }
 function calcPoints(pred,results){let pts=0;STATE.games.forEach(g=>{const r=results[g.id],p=pred[g.id];if(!r||!p)return;if(p.outcome===r.outcome)pts+=3;if(p.scoreA===r.scoreA&&p.scoreB===r.scoreB)pts+=10;if(p.scorer&&r.scorers&&r.scorers.includes(p.scorer))pts+=5;});return pts;}
 function renderLeaderboard(){
@@ -611,9 +515,14 @@ const WEEK3_SCORES=[{name:'Aime',pts:14},{name:'Raman',pts:14},{name:'Nathan',pt
 const WEEK4_SCORES=[{name:'Jono',pts:55},{name:'Karima',pts:49},{name:'Josh K',pts:49},{name:'Raman',pts:47},{name:'Luke J',pts:47},{name:'Luke A',pts:45},{name:'Holly',pts:37},{name:'Nathan',pts:37},{name:'Aime',pts:32},{name:'Lucas',pts:29},{name:'Tim',pts:24},{name:'Willliam',pts:24},{name:'Joanna',pts:16},{name:'Tori',pts:11},{name:'Katie',pts:11},{name:'Reece',pts:8}];
 const WEEK5_SCORES=[{name:'Katie',pts:117},{name:'Sam',pts:117},{name:'Olly',pts:117},{name:'Josh K',pts:114},{name:'Reece',pts:114},{name:'Aime',pts:99},{name:'Shauna',pts:94},{name:'Willliam',pts:94},{name:'Joanna',pts:87},{name:'Raman',pts:82},{name:'Luke A',pts:82},{name:'Ophelie',pts:82},{name:'Luke J',pts:82},{name:'Phil',pts:82},{name:'Jono',pts:79},{name:'Holly',pts:72},{name:'Karima',pts:54},{name:'Tori',pts:47}];
 const WEEK6_SCORES=[{name:'Lucas',pts:260},{name:'Sam',pts:253},{name:'Phil',pts:252},{name:'Josh K',pts:243},{name:'Luke J',pts:238},{name:'Aime',pts:223},{name:'Tori',pts:218},{name:'Ophelie',pts:210},{name:'Tim',pts:202},{name:'Jono',pts:195},{name:'Karima',pts:190},{name:'Raman',pts:190},{name:'Willliam',pts:188},{name:'Joanna',pts:183},{name:'Olly',pts:178}];
+/* Week 7 = France vs Morocco + Spain vs Belgium (weekly games) plus the Fjord & Chips
+   Clash bonus round (England vs Norway). Calculated 13 July 2026 from the Formspree
+   export against the actual results (France 2-0 Morocco, Spain 2-1 Belgium,
+   England 2-1 Norway aet). */
+const WEEK7_SCORES=[{name:'Raman',pts:263},{name:'Jono',pts:243},{name:'Tori',pts:231},{name:'Lucas',pts:218},{name:'Luke J',pts:208},{name:'Tim',pts:203},{name:'Josh K',pts:183},{name:'Luke A',pts:161},{name:'Karima',pts:154},{name:'Ophelie',pts:148},{name:'Sam',pts:143},{name:'Willliam',pts:136},{name:'Joanna',pts:113},{name:'Phil',pts:79},{name:'Aime',pts:67},{name:'Katie',pts:64},{name:'Olly',pts:27}];
 const NAME_ALIASES={'William':'Willliam'};
 function canonicalName(n){return NAME_ALIASES[n]||n;}
-const ALL_WEEKS=[{label:'Week 1',scores:WEEK1_SCORES},{label:'Week 2',scores:WEEK2_SCORES},{label:'Week 3',scores:WEEK3_SCORES},{label:'Week 4',scores:WEEK4_SCORES},{label:'Week 5',scores:WEEK5_SCORES},{label:'Week 6',scores:WEEK6_SCORES}];
+const ALL_WEEKS=[{label:'Week 1',scores:WEEK1_SCORES},{label:'Week 2',scores:WEEK2_SCORES},{label:'Week 3',scores:WEEK3_SCORES},{label:'Week 4',scores:WEEK4_SCORES},{label:'Week 5',scores:WEEK5_SCORES},{label:'Week 6',scores:WEEK6_SCORES},{label:'Week 7',scores:WEEK7_SCORES}];
 function getAccumulatedScores(){
   const totals={};ALL_WEEKS.forEach(week=>week.scores.forEach(s=>{const name=canonicalName(s.name);if(!totals[name])totals[name]={name,total:0,byWeek:{}};totals[name].byWeek[week.label]=s.pts;totals[name].total+=s.pts;}));
   return Object.values(totals).sort((a,b)=>b.total-a.total);
@@ -648,6 +557,6 @@ function setupNewWeek(){
   STATE.currentWeek=week;STATE.games=games;STATE.results={};save();showToast(`✅ Week ${week} set up!`);renderAdmin();
 }
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
-renderTeams();updatePredictorSelect();renderWeeklyGames();
+renderTeams();updatePredictorSelect();
 </script>
 </body></html>

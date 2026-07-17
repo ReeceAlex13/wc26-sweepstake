@@ -100,7 +100,7 @@
   <span class="nav-logo">⚽ WC26</span>
   <button class="nav-btn active" onclick="showPage('teams',this)">🏅 Teams</button>
   <button class="nav-btn" onclick="showPage('predict',this)">📝 Predict</button>
-  <button class="nav-btn" onclick="showPage('taco',this)">🫖 Crumpets &amp; Chimichurri</button>
+  <button class="nav-btn" onclick="showPage('taco',this)">🥐 Best Loser</button>
   <button class="nav-btn" onclick="showPage('leaderboard',this)">🏆 Sweepstake</button>
   <button class="nav-btn" onclick="showPage('predictions',this)">🎯 Predictions</button>
   <button class="nav-btn" onclick="showPage('admin',this)">⚙️ Admin</button>
@@ -122,10 +122,10 @@
 
     <div style="background:linear-gradient(135deg,#1a0a2e,#0d1a0d);border:1px solid rgba(255,215,0,0.2);border-radius:16px;padding:24px;margin-bottom:24px;">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-        <span style="background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;">Semi-Final</span>
+        <span style="background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;">World Cup Final</span>
       </div>
-      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🥐 The Croissant &amp; Churro Clash</div>
-      <div style="font-size:14px;color:var(--text);margin-top:2px;">🇫🇷 France vs Spain 🇪🇸</div>
+      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🏆 The Copa & Croqueta Clash</div>
+      <div style="font-size:14px;color:var(--text);margin-top:2px;">🇦🇷 Argentina vs Spain 🇪🇸</div>
       <div style="font-size:13px;color:var(--muted);margin-top:4px;">189 pts up for grabs — 11 questions, same format as last week</div>
     </div>
 
@@ -140,7 +140,7 @@
     <div id="weeklyGamesContainer"></div>
 
     <div class="submit-section">
-      <button class="btn-gold" onclick="submitBonusRound('predict')" style="font-size:16px;padding:14px 40px;">Submit Croissant &amp; Churro Picks ✓</button>
+      <button class="btn-gold" onclick="submitBonusRound('predict')" style="font-size:16px;padding:14px 40px;">Submit Copa & Croqueta Picks ✓</button>
     </div>
   </div>
 </div>
@@ -150,10 +150,10 @@
 
     <div style="background:linear-gradient(135deg,#1a0a2e,#0d1a0d);border:1px solid rgba(255,215,0,0.2);border-radius:16px;padding:24px;margin-bottom:24px;">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-        <span style="background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;">Semi-Final</span>
+        <span style="background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;">3rd Place Play-off</span>
       </div>
-      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🫖 The Crumpets &amp; Chimichurri Clash</div>
-      <div style="font-size:14px;color:var(--text);margin-top:2px;">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs Argentina 🇦🇷</div>
+      <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:.06em;color:var(--gold);">🥐 The Battle of the Best Loser</div>
+      <div style="font-size:14px;color:var(--text);margin-top:2px;">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs France 🇫🇷</div>
       <div style="font-size:13px;color:var(--muted);margin-top:4px;">189 pts up for grabs — 11 questions, same format as last week</div>
     </div>
 
@@ -167,7 +167,7 @@
     <div id="tacoGamesContainer"></div>
 
     <div class="submit-section">
-      <button class="btn-gold" onclick="submitBonusRound('taco')" style="font-size:16px;padding:14px 40px;">Submit Crumpets &amp; Chimichurri Picks ✓</button>
+      <button class="btn-gold" onclick="submitBonusRound('taco')" style="font-size:16px;padding:14px 40px;">Submit Best Loser Picks ✓</button>
     </div>
   </div>
 </div>
@@ -337,9 +337,11 @@ const TOURNAMENT_RESULTS=[
   /* ===== Quarter-Finals (Jul 9 – Jul 11) ===== */
   {home:'France',homeG:2,awayG:0,away:'Morocco'},{home:'Spain',homeG:2,awayG:1,away:'Belgium'},
   {home:'Norway',homeG:1,awayG:2,away:'England'},{home:'Argentina',homeG:3,awayG:1,away:'Switzerland'},
+  /* ===== Semi-Finals (Jul 14 – Jul 15) ===== */
+  {home:'France',homeG:0,awayG:2,away:'Spain'},{home:'England',homeG:1,awayG:2,away:'Argentina'},
 ];
 /* MP/W/D/L/GF/GA above now cover the group stage plus every knockout match up to and
-   including the Quarter-Finals (last updated 13 July 2026). Penalty shootout winners
+   including the Semi-Finals (last updated 17 July 2026). Penalty shootout winners
    are marked correctly in the "Stage reached" column, but the score used for W/D/L here
    is the actual 90-min/extra-time score, so shootout matches count as a draw for both
    sides — same convention the sheet was already using. */
@@ -406,28 +408,28 @@ function updatePredictorSelect(){
    — change teamA/teamB/name/subtitle/fixtureLabel — everything else
    (rendering, points, submitting) works automatically.
    ===================================================================== */
-const WEEKLY_FORM_URL='https://formspree.io/f/xgogeqao';
+const WEEKLY_FORM_URL='https://formspree.io/f/xzdnejvp';
 
 const BONUS_ROUNDS={
   predict:{
-    name:'The Croissant & Churro Clash',
-    fixtureLabel:'The Croissant & Churro Clash — France vs Spain',
-    teamA:{name:'France',flag:'🇫🇷'},
+    name:'The Copa & Croqueta Clash',
+    fixtureLabel:'The Copa & Croqueta Clash — Argentina vs Spain',
+    teamA:{name:'Argentina',flag:'🇦🇷'},
     teamB:{name:'Spain',flag:'🇪🇸'},
     selectId:'predictorSelect',
     containerId:'weeklyGamesContainer',
     submitBtnSelector:'#predictPage .submit-section .btn-gold',
-    submitLabel:'Submit Croissant & Churro Picks ✓',
+    submitLabel:'Submit Copa & Croqueta Picks ✓',
   },
   taco:{
-    name:'The Crumpets & Chimichurri Clash',
-    fixtureLabel:'The Crumpets & Chimichurri Clash — England vs Argentina',
+    name:'The Battle of the Best Loser',
+    fixtureLabel:'The Battle of the Best Loser — England vs France',
     teamA:{name:'England',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
-    teamB:{name:'Argentina',flag:'🇦🇷'},
+    teamB:{name:'France',flag:'🇫🇷'},
     selectId:'tacoPredictorSelect',
     containerId:'tacoGamesContainer',
     submitBtnSelector:'#tacoPage .submit-section .btn-gold',
-    submitLabel:'Submit Crumpets & Chimichurri Picks ✓',
+    submitLabel:'Submit Best Loser Picks ✓',
   },
 };
 
@@ -520,9 +522,16 @@ const WEEK6_SCORES=[{name:'Lucas',pts:260},{name:'Sam',pts:253},{name:'Phil',pts
    export against the actual results (France 2-0 Morocco, Spain 2-1 Belgium,
    England 2-1 Norway aet). */
 const WEEK7_SCORES=[{name:'Raman',pts:263},{name:'Jono',pts:243},{name:'Tori',pts:231},{name:'Lucas',pts:218},{name:'Luke J',pts:208},{name:'Tim',pts:203},{name:'Josh K',pts:183},{name:'Luke A',pts:161},{name:'Karima',pts:154},{name:'Ophelie',pts:148},{name:'Sam',pts:143},{name:'Willliam',pts:136},{name:'Joanna',pts:113},{name:'Phil',pts:79},{name:'Aime',pts:67},{name:'Katie',pts:64},{name:'Olly',pts:27}];
+/* Week 8 = the Crumpets & Chimichurri Clash (England vs Argentina) and the Croissant
+   & Churro Clash (France vs Spain) — the two World Cup semi-finals. Calculated 17 July
+   2026 from the Formspree export against the actual results: Argentina beat England
+   2-1 (Gordon 54', Fernandez 85', L. Martinez 90+2', HT 0-0, 4 yellows, 7 corners, no
+   penalty, no red card), and Spain beat France 2-0 (Oyarzabal pen 22', Porro 58', HT
+   1-0 Spain, 3 yellows, 8 corners, one penalty scored, no red card). */
+const WEEK8_SCORES=[{name:'Josh K',pts:226},{name:'Karima',pts:206},{name:'Aime',pts:202},{name:'Raman',pts:188},{name:'Lucas',pts:186},{name:'Willliam',pts:183},{name:'Olly',pts:181},{name:'Tori',pts:174},{name:'Luke A',pts:166},{name:'Joanna',pts:163},{name:'Luke J',pts:153},{name:'Ophelie',pts:151},{name:'Sam',pts:126},{name:'Jono',pts:126},{name:'Phil',pts:109},{name:'Reece',pts:107},{name:'Katie',pts:99},{name:'Shauna',pts:84},{name:'Tim',pts:79}];
 const NAME_ALIASES={'William':'Willliam'};
 function canonicalName(n){return NAME_ALIASES[n]||n;}
-const ALL_WEEKS=[{label:'Week 1',scores:WEEK1_SCORES},{label:'Week 2',scores:WEEK2_SCORES},{label:'Week 3',scores:WEEK3_SCORES},{label:'Week 4',scores:WEEK4_SCORES},{label:'Week 5',scores:WEEK5_SCORES},{label:'Week 6',scores:WEEK6_SCORES},{label:'Week 7',scores:WEEK7_SCORES}];
+const ALL_WEEKS=[{label:'Week 1',scores:WEEK1_SCORES},{label:'Week 2',scores:WEEK2_SCORES},{label:'Week 3',scores:WEEK3_SCORES},{label:'Week 4',scores:WEEK4_SCORES},{label:'Week 5',scores:WEEK5_SCORES},{label:'Week 6',scores:WEEK6_SCORES},{label:'Week 7',scores:WEEK7_SCORES},{label:'Week 8',scores:WEEK8_SCORES}];
 function getAccumulatedScores(){
   const totals={};ALL_WEEKS.forEach(week=>week.scores.forEach(s=>{const name=canonicalName(s.name);if(!totals[name])totals[name]={name,total:0,byWeek:{}};totals[name].byWeek[week.label]=s.pts;totals[name].total+=s.pts;}));
   return Object.values(totals).sort((a,b)=>b.total-a.total);
